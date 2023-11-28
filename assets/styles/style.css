@@ -166,3 +166,11 @@ section{
     width: 100px;
 }
 
+#fotodeperfil{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px ;
+    border: 2px solid black; 
+    float: left;
+    margin: 30px
+}
