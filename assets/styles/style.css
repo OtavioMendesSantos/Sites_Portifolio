@@ -1,10 +1,10 @@
 :root{
-    --cor00: darkred;
-    --cor01: #07038C;
-    --cor02: #020873;
-    --cor03: #020659;
-    --cor04: #010440;
-    --cor05: #010326;
+    --cor00: #C5EBA8;
+    --cor01: #72FA02;
+    --cor02: #70C72A;
+    --cor03: #64943D;
+    --cor04: #4C613B;
+    --cor05: #2E3329;
 
 }
 
@@ -27,7 +27,7 @@ p{
 
 /* Configurando Header */
 header{
-    background-image: linear-gradient(180deg, #010326, #07038C);
+    background-image: linear-gradient(180deg, var(--cor03), var(--cor04));
     
     text-align: center;
     color: white;
@@ -36,25 +36,30 @@ header{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
+header h1 a {
+    text-decoration: none;
+    color: white;
+}
+
 header h1{
     margin: 0px 0px 20px 0px;
 }
 
 /* Configurando Header > Nav */
-ul{
+nav#menu_cabecalho ul{
     list-style-type: none;
     margin: 0;
     padding: 0px;
     overflow: hidden;
-   
-background-color: rgb(150, 150, 150)
+    background-color: var(--cor04);
+    margin: auto;
 }
 
-li{
+nav#menu_cabecalho li{
     float: left;  
 }
 
-li a {
+nav#menu_cabecalho li a {
     display: block;
     color: white;
     text-align: center;
@@ -62,8 +67,8 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: black;
+nav#menu_cabecalho li a:hover {
+    background-color: var(--cor05);
 }
 
 /* Configurando Conteúdo Principal */
@@ -88,7 +93,7 @@ nav > ul > li > p > a{color: white;}*/
 
 /* Configurando o Footer/Rodapé */
 footer{
-    background-image: linear-gradient(180deg, #07038C, #010326); 
+    background-image: linear-gradient(180deg, var(--cor03), var(--cor04)); 
     padding: 20px;
     color: white;
     text-align: center;
