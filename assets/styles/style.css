@@ -144,14 +144,22 @@ button#corfundo{
 /*
 Não sei se isso que estou fazendo é certo, provávelmente não, no futuro eu faço da forma correta
 */
+section#paletaCores{
+    border: 1px solid black;
+    min-width: 350px;
+    max-width: max-content;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+}
 
-.cores{
+section#paletaCores .cores{
     width: 100px;
     height: 200px;
     border: black;
     color: white;
     text-align: center;
-    display: inline-block;
+    
     padding: 10px;
     margin: -5px;
 }
@@ -162,13 +170,7 @@ Não sei se isso que estou fazendo é certo, provávelmente não, no futuro eu f
 #navy_blue{background-color: var(--cor02);}
 #ultramarine{background-color: var(--cor01);}
 
-section{
-    border: 1px solid black;
-    min-width: 350px;
-    max-width: max-content;
-    padding: 10px;
-    margin: auto;
-}
+
 
 .soma{
     width: 100px;
