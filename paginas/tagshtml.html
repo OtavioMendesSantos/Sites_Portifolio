@@ -60,6 +60,66 @@
                 <td>Oliveira Mendes</td>
            </tr>
         </table>
+        <section id="tagsDeFormulario">
+            <h1>Tags de Formulário</h1>
+            <hr>
+            <h2>Input</h2>
+            <h3>Checkbox</h3>
+            <p>Quais dispositivos Eletrônicos você possui?</p>
+            <form action="" method="get">
+                <input type="checkbox" id="dispositivo1" name="dispositivo[]" value="notebook">
+                <label for="dispositivo1">Notebook</label><br>
+                
+                <input type="checkbox" id="dispositivo2" name="dispositivo[]" value="desktop" >
+                <label for="dispositivo2">Desktop</label><br>
+
+                <input type="checkbox" id="dispositivo2" name="dispositivo[]" value="cpu" disabled>
+                <label for="dispositivo2"><del>CPU</del></label><br>
+
+                <input type="checkbox" id="dispositivo4" name="dispositivo[]" value="celular" >
+                <label for="dispositivo4">Celular</label><br>
+
+                <input type="submit">
+                
+                <p>Necessário estudar sobre os métodos get e post, e sua interação com php, java, etc. Estudar a relação dos "[ ]"</p>
+            </form>
+            
+            <h3>Radio</h3>
+            <p>Qual sua comida favorita?</p>
+            <form action="" method="get">
+                <input type="radio" name="radioComidaFavorita" id="pizzaPortuguesa">
+                <label for="pizza">Pizza</label><br>
+                <input type="radio" name="radioComidaFavorita" id="hamburguer">
+                <label for="hamburguer">Hamburguer</label><br>
+                <input type="radio" name="radioComidaFavorita" id="strogonoff">
+                <label for="strogonoff">Strogonoff</label><br>
+                
+                <input type="radio" name="radioComidaFavorita" id="outro" checked>
+                <label for="outro">Outro</label><br>
+
+                <input type="submit">
+                <hr>
+            </form>
+
+            <h2>Select</h2>
+            <form action="">
+                <label for="profissaoUsuario">Qual é sua profissão?</label>
+                <select name="profissaoUsuario" id="profissaoUsuario" >
+                    <option value="programador" selected>Programador</option>
+                    <option value="artista">Artista</option>
+                    <option value="mecanico">Mecânico</option>
+                    <option value="estudante">Estudante</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </form>
+
+            <h2>Textarea</h2>
+            <form action="">
+                <label for="opniaoUsuario">Quais são suas impressões sobre o meu site ?</label><br>
+                <textarea name="opniaoUsuario" id="opniaoUsuario" cols="40" rows="10" style="resize: none;"></textarea><br> <!-- Tirar css inline -->
+                <p>Preciso estudar sobre este elemento de formulário, devo usar a documenteção da <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/textarea" target="_blank" rel="external">Mozzila</a></p>
+            </form>
+        </section>
     </main>
     <footer>
         <p>Desenvolvido por <a href="quemsoueu.html">Otávio Mendes Santos</a></p>
