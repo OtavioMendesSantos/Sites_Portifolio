@@ -1,0 +1,22 @@
+Nome: O Nobre 
+
+Fontes:
+    titulos:https://www.dafont.com/pt/old-london.font?text=Lorem+Ipsum+%E9+simplesmente+uma+simula%E7%E3o+de+texto+da+ind%FAstria+tipogr%E1fica+e+de&back=theme
+
+    inicios de texto: https://www.dafont.com/pt/medieval-victoriana.font
+
+    texto: https://www.dafont.com/pt/enchanted-land.font?text=Lorem+Ipsum+%E9+simplesmente+uma+simula%E7%E3o+de+texto+da+ind%FAstria+tipogr%E1fica+e+de
+
+    simbolos: https://www.dafont.com/pt/free-medieval.font
+
+Inspiração: 
+    https://tudoparahomens.com.br/saiba-qual-foi-o-primeiro-jornal-da-historia/ 
+    https://super.abril.com.br/coluna/oraculo/qual-foi-o-primeiro-jornal-da-historia
+
+Paleta de cores:
+    #650101
+    #780102
+    #A16A39
+    #D4B98C
+    #B78F59
+    https://coolors.co/b78f59-d4b98c-a16a39-780102-650101
