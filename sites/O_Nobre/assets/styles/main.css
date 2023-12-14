@@ -1,0 +1,63 @@
+@font-face {
+    font-family: Old London;
+    src: url(../fonts/old_london/OldLondon_.otf);
+}
+
+@font-face {
+    font-family: 'Enchanted Land';
+    src: url(../fonts/enchanted_land/Enchanted_Land.otf);
+}
+
+@font-face {
+    font-family: Medieval Figures;
+    src: url(../fonts/medieval_figures/Free_Medieval.ttf);
+}
+
+*{
+    --fonteTitulo: 'Old London', 'Times New Roman', Times, serif;
+    --fonteTexto: 'Enchanted Land', 'Courier New', Courier, sans-serif;
+    --fonteFigurasMedievais: 'Medieval Figures';
+    
+    --cor05: #650101;
+    --cor04: #780102;
+    --cor03: #A16A39;
+    --cor02: #B78F59;
+    --cor01: #D4B98C;
+}
+
+/* Configurando span figuras */
+span.fonteFigurasMedievais{ /* LINK: https://www.dafont.com/pt/free-medieval.font */
+    font-size: 3em;
+    font-family: var(--fonteFigurasMedievais);
+}
+
+/* Configurações gerais dos elementos */
+h1{
+    font-family: var(--fonteTitulo);
+    color: var(--cor05);
+    font-size: 2.5em;
+    text-align: center;
+}
+
+p{
+    font-family: var(--fonteTexto);
+    font-size: 1.5em;
+}
+
+/* Configurando Body */
+body{
+    background-color: var(--cor01);
+    margin: 0px;
+}
+
+/* Configurando Main */
+main{
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 0px;
+    background-color: var(--cor02);
+    padding: 10px;
+    box-shadow: 0 0 5px black;
+    margin-top: 0px;
+}
