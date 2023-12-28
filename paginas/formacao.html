@@ -6,22 +6,19 @@
         <link rel="shortcut icon" href="../assets/img/icone_sorridente.ico" type="image/x-icon">
     <title>Minha Formação</title>
     <link rel="stylesheet" href="../assets/styles/style.css">
+    <style>
+        li.cursoConcluido{
+            list-style: none;
+        }
+        li.cursoConcluido::before{
+            content: '✔ ';
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1><a href="../index.html">Meu site</a></h1>
-        <nav id="menu_cabecalho">
-            <ul>
-                <li><a href="hobbies.html" rel="next"  class="link_menu">Hobbies</a></li>
-                <li><a href="formacao.html" rel="next" class="link_menu">Minha Formação</a></li>
-                <li><a href="baguncas.html"  rel="next" class="link_menu">Bagunças</a></li>
-                <li><a href="tagshtml.html" rel="next" class="link_menu">Tags Html</a></li>
-                <li><a href="javascript.html"  rel="next" class="link_menu">JavaScript</a></li>
-            </ul>
-        </nav>
+    <header id="headerPoweredByJs">
     </header>
-   <main>
-    
+    <main> 
         <div id="apresentacao">
 
             <h1>Quem sou eu?</h1>
@@ -44,11 +41,11 @@
         <ol>
             <li>Curso em vídeo</li>
             <ul>
-                <li><a href="https://www.cursoemvideo.com/curso/curso-de-algoritmo/" target="_blank" rel="external">Curso de Algoritmo</a> - 40 Horas</li>
-                <li><a href="https://www.cursoemvideo.com/curso/curso-de-git-e-github/" target="_blank" rel="external">Curso de Git e GitHub</a> - 40 Horas</li>
-                <li><a href="https://www.cursoemvideo.com/curso/mysql/" target="_blank" rel="external">Curso de MySQL</a> - 40 Horas</li>
+                <li class="cursoConcluido"><a href="https://www.cursoemvideo.com/curso/curso-de-algoritmo/" target="_blank" rel="external">Curso de Algoritmo</a> - 40 Horas</li>
+                <li class="cursoConcluido"><a href="https://www.cursoemvideo.com/curso/curso-de-git-e-github/" target="_blank" rel="external">Curso de Git e GitHub</a> - 40 Horas</li>
+                <li class="cursoConcluido"><a href="https://www.cursoemvideo.com/curso/mysql/" target="_blank" rel="external">Curso de MySQL</a> - 40 Horas</li>
                 <li><a href="https://www.cursoemvideo.com/curso/html5-css3-modulo1/" target="_blank" rel="external">Curso de HTML5 e CSS3</a> (Módulo 3 de 5) - 160 Horas | <em>Cursando</em></li>
-                <li><a href="https://www.cursoemvideo.com/curso/javascript/" target="_blank" rel="external">Curso de JavaScript</a> - 40 horas</li>
+                <li class="cursoConcluido"><a href="https://www.cursoemvideo.com/curso/javascript/" target="_blank" rel="external">Curso de JavaScript</a> - 40 horas</li>
                 <li><a href="https://www.cursoemvideo.com/curso/hardware/" target="_blank" rel="external">Curso de Hardware</a> - 20 Horas | <em>Cursando</em></li>
                 <li><a href="https://www.cursoemvideo.com/curso/php-basico/" target="_blank" rel="external">Curso de PHP</a> - 40 horas | <em>Cursando</em></li>
                 <li><a href="https://www.cursoemvideo.com/curso/java-basico/" target="_blank" rel="external">Curso de Java</a> - 40 horas | <em>Cursando</em></li>
@@ -56,7 +53,7 @@
             </ul>
             <li>Senai</li>
             <ul>
-                <li>Curso de Administrador de Banco de Dados - 240 Horas</li>
+                <li class="cursoConcluido">Curso de Administrador de Banco de Dados - 240 Horas</li>
                 <li>Curso de Programador Full Stack - 670 Horas | <em>Cursando</em></li>
             </ul>
             <li>Origamid</li>
@@ -83,5 +80,6 @@
     <footer>
         <p>Desenvolvido por <a href="quemsoueu.html">Otávio Mendes Santos</a></p>
     </footer>
+    <script src="../assets/script/headerDinamico.js"></script>
 </body>
 </html>

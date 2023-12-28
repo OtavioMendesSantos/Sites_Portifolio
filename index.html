@@ -9,22 +9,11 @@
 
 </head>
 <body>
-    <header>
-        <h1><a href="../index.html">Meu site</a></h1>
-        <nav id="menu_cabecalho">
-            <ul>
-                <li><a href="paginas/hobbies.html" rel="next"  class="link_menu">Hobbies</a></li>
-                <li><a href="paginas/formacao.html" rel="next" class="link_menu">Minha Formação</a></li>
-                <li><a href="paginas/baguncas.html"  rel="next" class="link_menu">Bagunças</a></li>
-                <li><a href="paginas/tagshtml.html" rel="next" class="link_menu">Tags Html</a></li>
-                <li><a href="paginas/javascript.html"  rel="next" class="link_menu">JavaScript</a></li>
-            </ul>
-        </nav>
+    <header id="headerPoweredByJs">
     </header>
     
     <main>
-        <p>Calma calabreso, antes de falar que o site tá feio (eu já sei disso), só tô aprendendo um pouco de flex box antes de dar uma estilizada geral.</p>
-        <h2>Qual meu objetivo</h2>
+        <h1>Qual meu objetivo</h1>
         <p>
             A medida que vou estudando HTML, CSS e JavaScript quero ter um espaço para ter a liberdade de implementar meus conhecimentos, e bom este é o local. Então, simplesmente <EM>testar meus conhecimentos</EM>. 
         </p>
@@ -37,15 +26,15 @@
         <p>Meus conhecimentos estão melhorando um pouco, quero muito deixar esse site bonito, bom, pelo menos organizado, né? Estou vendo um conteúdo muito interessante sobre psicologia das cores no curso de html e css do curso em vídeo, e decidi assumir uma paleta de cores monocromática, baseada na cor Azul.</p>
         <h2><a href="https://coolors.co/07038c-020873-020659-010440-010326" rel="external" target="_blank">Paleta de cor</a> escolhida</h2>
         
-        <section id="paletaCores">
+        <section id="paletaCores"> <!-- Arrumar isso -->
             <div class="cores" id="oxford_blue">color:</div>
             <div class="cores" id="penn_blue">color:</div>
             <div class="cores" id="federal_blue">color:</div>
             <div class="cores" id="navy_blue">color:</div>
             <div class="cores" id="ultramarine">color:</div>
         </section>
-        
-        <p>Futuramente vou precisar organizar os arquivos do meu site, criando uma página assets, img, etc</p>
+
+        <h1>Lista de afazeres:</h1>
         <p>fazer um link com dowload do meu currículo</p>
         <p>Vou focar primeiramente na página inicial, depois parto para as outras páginas</p>
         <p>eu sei que o site tá feio, vou ir arrumando com o tempo</p>
@@ -53,9 +42,6 @@
     <footer>
         <p>Desenvolvido por <a href="quemsoueu.html">Otávio Mendes Santos</a></p>
     </footer>
-    <script>
-        let alterHeader = document.querySelector("#menu_cabecalho")
-        alterHeader.innerHTML += ("teste de JavaScript maroto - vou gerar esse header com JavaScript pra ver no que dá")
-    </script>
+    <script src="../assets/script/headerDinamicoIndex.js"></script>
 </body>
 </html>
