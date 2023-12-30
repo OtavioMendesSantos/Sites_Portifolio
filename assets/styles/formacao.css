@@ -1,0 +1,47 @@
+/* Grid */
+section#apresentacao{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+}
+
+section#apresentacao h1{
+    grid-column: 1 / -1;
+}
+
+section#apresentacao img#fotoDePerfil{
+    grid-row: 2/4 ;
+    place-self: center
+}
+
+
+
+
+
+/* Estilização Geral */
+main{
+    background-color: rgb(241, 241, 241);
+}
+
+section#apresentacao img#fotoDePerfil{
+    border-radius: 100px;
+}
+
+section#apresentacao p{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222222;
+}
+
+div#contato h2{
+    margin: 0;
+}
+
+li.cursoConcluido{
+    list-style: none;
+}
+li.cursoConcluido::before{
+    content: '✔ ';
+}
+
+/* Responsividade */

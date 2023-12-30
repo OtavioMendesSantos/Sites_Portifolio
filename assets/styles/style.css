@@ -169,17 +169,3 @@ section#paletaCores .cores{
 #federal_blue{ background-color: var(--cor03);}
 #navy_blue{background-color: var(--cor02);}
 #ultramarine{background-color: var(--cor01);}
-
-
-
-.soma{
-    width: 100px;
-}
-
-#fotodeperfil{
-    max-height: 150px;
-    max-width: 150px;
-    border: 2px solid black; 
-    float: left;
-    margin: 10px;
-}
