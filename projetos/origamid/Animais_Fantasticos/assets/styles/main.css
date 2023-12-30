@@ -22,7 +22,7 @@ body{
     --fonteImportada: 'IBM Plex Mono', monospace;
     --fonteTitulo: 'Playfair Display SC', serif;
     background-color: #faf6ed;
-    color: 222222;
+    color: #222222;
     -webkit-font-smoothing: antialiased; /* PENDENTE: Ver isso */
     display: grid;
     grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
