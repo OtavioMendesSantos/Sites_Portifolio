@@ -1,0 +1,154 @@
+/* Importando Conteúdo */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+/* Configurações Gerais */
+body{
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    max-height: fit-content ;
+    background-color: #ececec;
+
+    --colorheader: #222222;
+    --fontTitle: 'Playfair Display SC', serif;
+}
+
+/* Configurando Header e Seus Componentes */
+header{
+    background-color: var(--colorheader);
+    height: 80px;
+    display: grid;
+    grid-template-columns: 150px 3fr;
+    gap: 10px;
+    place-items: center start;
+}
+
+.logo{
+    padding: 10px;
+}
+
+.logo img{
+    min-width: 100px;
+    max-width: 150px;
+    width: 100%;
+    grid-column: 1 / 2 ;
+}
+
+ul.menu{
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-hamburguer{
+    display: none;
+}
+
+li.linkMenu{
+    display: inline-block;
+    background-color: #424242;
+    
+    margin-left: 10px;
+    padding: 13px;
+    font-family: var(--fontTitle);
+    color: white;
+    font-weight: bold;
+}
+
+li.linkMenu:hover{
+    background-color: #323232;
+    box-shadow: 2px 2px 2px var(--colorheader);
+}/*Seria legal fazer uma animação que quando passasse o mouse, o espaço das letras aumentariam um pouco */
+
+li.linkMenu a{
+    text-decoration: none;
+}
+
+/* Configurando Main */
+/* main{
+    height: 200vh;
+
+} */
+
+div#toTop{
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border: 2px solid var(--colorheader);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#toTop img{
+    width: 50px;
+}
+
+/* Configurando Footer e seus Componentes */
+footer{
+    margin: 0;
+    height: 90px;
+    width: 100%;
+    background-color: #222222;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+}
+
+footer p, a{
+    font-family: var(--fontTitle);
+    color: #ffffff;
+}
+
+/* Media Queryes 375*/
+@media only screen and (max-width: 650px){
+    header{
+        grid-template-columns: 1fr 2fr 1fr;
+        place-items: center center;
+        height: fit-content;
+    }
+
+    nav{
+        grid-column: 3/4;
+        position: relative;
+    }
+
+    nav .menu-hamburguer{
+        display: block;
+        background-color: #323232;
+        height: fit-content;
+        padding: 5px 7px;
+        text-align: center;
+    }
+    
+    .menu-hamburguer img{
+        width: 46px;
+        height: 46px;
+    }
+
+    ul.menu{
+        display: none;
+        text-align: center;
+        width:min-content;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        top: 65px;
+    }
+
+    ul.showMenu {
+        display: block;
+    }
+    
+    li.linkMenu{
+        margin: 0px;
+        padding: 13px;
+        width: 100px;
+    }
+}
