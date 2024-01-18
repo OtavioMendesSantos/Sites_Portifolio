@@ -21,6 +21,7 @@ header{
     grid-template-columns: 150px 3fr;
     gap: 10px;
     place-items: center start;
+    margin-bottom: 75px;
 }
 
 .logo{
@@ -66,10 +67,10 @@ li.linkMenu a{
 }
 
 /* Configurando Main */
-/* main{
+main{
     height: 200vh;
 
-} */
+}
 
 div#toTop{
     width: 50px;
@@ -80,9 +81,7 @@ div#toTop{
     position: fixed;
     bottom: 30px;
     right: 30px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
+    display: none; 
     cursor: pointer;
 }
 
@@ -92,12 +91,11 @@ div#toTop{
 
 /* Configurando Footer e seus Componentes */
 footer{
-    margin: 0;
-    height: 90px;
-    width: 100%;
     background-color: #222222;
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px;
     text-align: center;
 }
 
@@ -112,6 +110,7 @@ footer p, a{
         grid-template-columns: 1fr 2fr 1fr;
         place-items: center center;
         height: fit-content;
+        margin-bottom: 20px;
     }
 
     nav{

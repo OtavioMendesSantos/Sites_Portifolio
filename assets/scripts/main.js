@@ -89,18 +89,18 @@ function toTop(){
 toTop()
 
 /* Hidden To Top */
-const logo = document.querySelector('#logo')
-
 function hideToTop(){
-    const rect = logo.getBoundingClientRect()
-    console.log(rect.top)
+    const logo = document.querySelector('#logo')
+    const divLogo = document.querySelector('div#toTop')
 
-    if (rect.top >= -30 ){
-        document.querySelector('#toTop').style.display = 'none'
+    const rect = logo.getBoundingClientRect()
+
+    if (rect.top >= -100 ){
+        divLogo.style.display = 'none'
     } else {
-        document.querySelector('#toTop').style.display = 'block'
+        divLogo.style.display = 'block'
     }
 }
-
 window.addEventListener('scroll', hideToTop)
+
 
