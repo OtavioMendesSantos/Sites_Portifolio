@@ -4,6 +4,7 @@ function createHeader(){
 
     const divLogo = document.createElement('div')
     divLogo.classList.add('logo')
+    divLogo.id = ('logo')
     
     const linkHome = document.createElement('a')
     linkHome.setAttribute('href', '../index.html') 
@@ -70,3 +71,35 @@ function showMenu(){
     }
 }
 showMenu()
+
+/* To Top */
+function toTop(){
+    function scrollToTop(event){
+        event.preventDefault()
+        const href = event.target.parentElement.getAttribute('href')
+        const scroll = document.querySelector(href)
+        scroll.scrollIntoView({
+            behavior: "smooth",
+        })
+    }
+    
+    const arrowToTop = document.querySelector('#toTop a')
+    arrowToTop.addEventListener('click', scrollToTop)
+}
+toTop()
+
+/* Hidden To Top */
+const logo = document.querySelector('#logo')
+
+function hideToTop(){
+    const rect = logo.getBoundingClientRect()
+    console.log(rect.top)
+
+    if (rect.top >= -30 ){
+        document.querySelector('#toTop').style.display = 'none'
+    } else {
+        document.querySelector('#toTop').style.display = 'block'
+    }
+}
+
+window.addEventListener('scroll', hideToTop)
