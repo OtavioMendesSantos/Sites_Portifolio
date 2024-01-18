@@ -13,6 +13,17 @@ body{
     --fontTitle: 'Playfair Display SC', serif;
 }
 
+h1, h2{
+    font-family: var(--fontTitle);
+    font-weight: 800;
+}
+
+h1{
+    font-size: 2.3rem;
+    text-align: center;
+    margin: 0 0 16px 0 ;
+}
+
 /* Configurando Header e Seus Componentes */
 header{
     background-color: var(--colorheader);
@@ -68,8 +79,8 @@ li.linkMenu a{
 
 /* Configurando Main */
 main{
-    height: 200vh;
-
+    min-height: 73vh;
+    padding: 10px;
 }
 
 div#toTop{
@@ -99,11 +110,10 @@ footer{
     text-align: center;
 }
 
-footer p, a{
+footer p a,footer p , .linkMenu a{
     font-family: var(--fontTitle);
     color: #ffffff;
 }
-
 /* Media Queryes 375*/
 @media only screen and (max-width: 650px){
     header{
