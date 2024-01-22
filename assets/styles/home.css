@@ -105,3 +105,13 @@ margin: 5px;
     bottom: 0px;
     height: 1.2em;
 }
+
+@media only screen and (max-width: 650px){
+    .conteiner{
+        grid-template-columns: 1fr ;
+    }
+    
+    .conteiner-right a {
+        text-decoration: underline;
+    }
+}
