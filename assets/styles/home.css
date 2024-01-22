@@ -1,0 +1,107 @@
+.conteiner{
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+}
+
+.conteiner-left{
+    max-width: 250px;
+    background-color: #323232;
+    padding: 10px;
+    
+}
+
+#profile{
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 5px ;
+}
+
+.conteiner-left p{
+    text-align: center;
+    margin: 10px;
+}
+
+.conteiner-left h2{
+    margin: 10px;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+.skills{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;    
+}
+
+.skills img{
+margin: 5px;
+}
+
+.skill{
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip-text{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%); /* Pendente: ver isso */
+    background-color: #222222;
+    color: #fff;
+    white-space: nowrap;
+    padding: 5px 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0; /* Pendente: ver isso */
+    transition: opacity 0.5s ease ; /* Pendente: ver isso */
+}
+
+.tooltip-text::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: 15px solid;
+    border-color: #222 #2220 #2220 #2220 ;
+}
+
+.skill:hover .tooltip-text{
+   top: -100%;
+   visibility: visible;
+   opacity: 1;
+}
+
+.conteiner-right{
+    padding: 10px;
+}
+
+.conteiner-right p{
+    margin: 0 0 10px 0;
+    text-indent: 20px;
+    
+}
+
+.conteiner-right a{
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+
+.conteiner-right a:hover{
+    text-decoration: underline;
+}
+
+.conteiner-right a>img{
+    position: absolute;
+    bottom: 0px;
+    height: 1.2em;
+}
