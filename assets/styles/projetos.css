@@ -23,9 +23,6 @@ article{
     align-items: center;
     justify-items: center;
     gap: 0;
-}
-
-.project{
     padding: 10px;
     text-align: center;
 }
@@ -45,6 +42,18 @@ div img{
     margin: 10px 0 0 0;
 }
 
+.project .stacks{
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.stacks img{
+    width: 46px;
+}
+
+/* Medias Queries */
 @media only screen and (min-width: 750px) {
     .projects{
         grid-template-columns: 1fr 1fr;
