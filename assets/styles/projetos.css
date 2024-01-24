@@ -27,6 +27,11 @@ article{
     text-align: center;
 }
 
+.project a{
+    text-decoration: none;
+    color: #000;
+}
+
 .project .img-container{
     width: 250px;
     height: 300px;
@@ -38,11 +43,16 @@ article{
     object-fit: cover;
     height: 100%;
     width: 100%;
-    
 }
 
 .project-name{
-    margin: 10px 0 0 0;
+    font-size: 1.5em;
+    display: block;
+    margin: 10px auto 0;
+}
+
+.project-name::after{
+    content: url(../svg/open_in_new.svg);
 }
 
 .project .stacks{
