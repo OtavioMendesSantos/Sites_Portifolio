@@ -1,15 +1,43 @@
+@font-face {
+    font-family: 'Neon Lights';
+    src: url(../fonts/neon2.ttf);
+}
+
+*{
+    --fonteImportada: 'Neon Lights', 'Arial', Helvetica, sans-serif;   
+    user-select:none;  
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 section{
     margin: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #fff;
-    max-width: 350px;
+    
+    max-width: min-content;
 }
 
 h1{
-    text-align: center;    
+    margin: 20px;
+    text-align: center;   
+    font-size: 3em;
+    font-family: var(--fonteImportada);
+    letter-spacing: 5px;
+    color: #800080;
+    text-shadow: 1px 1px 12px #6d096d;
 }
 
 .box {
@@ -18,7 +46,73 @@ h1{
     align-items: center;
     width: 100px;
     height: 100px;
-    border: 1px solid;
     text-align: center;
     font-size: 100px;
+    color: #800080;
+    text-shadow: 1px 1px 12px #6d096d;
+    margin: 0px;
+}
+
+p{
+    visibility: hidden;
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    color: #800080;
+    text-shadow: 1px 1px 12px #6d096d;
+}
+
+button{
+    visibility: hidden;
+    display: block;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border: 1px solid #6d096d;
+    background-color: transparent;
+    font-size: 2em;
+    font-family: var(--fonteImportada);
+    color: #800080;
+}
+
+
+button:hover{
+    box-shadow: 0px 0px 20px#6d096d;
+}
+
+/* Bordas */
+.box{
+    border-color: #fff;
+    border-width: px;
+    border-style: solid;
+}
+
+#box1{
+    border-top: none;
+    border-left: none;
+}
+#box2{
+    border-top: none;
+}
+#box3{
+    border-top: none;
+    border-right: none;
+}
+#box4{
+    border-left: none;
+}
+/* #box5{} */
+#box6{
+    border-right: none;
+}
+#box7{
+    border-bottom: none;
+    border-left: none;
+}
+#box8{
+    border-bottom: none;
+}
+#box9{
+    border-bottom: none;
+    border-right: none;
 }

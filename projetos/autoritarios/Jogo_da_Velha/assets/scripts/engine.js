@@ -1,4 +1,9 @@
 const states = {
+    views:{
+        button: document.querySelector('button'),
+        victoryText: document.querySelector('p'),
+        victory:'',
+    },
     values:{
         allBox : document.querySelectorAll('.box'),
         idBoxes : [],
@@ -17,6 +22,21 @@ const states = {
     },
 }
 
+function showButton(){
+    states.views.button.style.visibility = 'visible';
+    switch (states.views.victory){
+        case 'player':
+            states.views.victoryText.innerHTML = 'Parabéns, você ganhou!'
+            break
+        case 'computer':
+            states.views.victoryText.innerHTML = 'Você perdeu, tente novamente!'
+            break
+        case 'draw':
+            states.views.victoryText.innerHTML = 'Empate.' 
+            break
+    }
+    states.views.victoryText.style.visibility = 'visible'
+}
 
 function getIdBoxes(){
     states.values.allBox.forEach((box)=>{
@@ -51,13 +71,16 @@ function checkDrawn(){
 
 function checkGameOver(){
     if(checkWin(states.values.playerLocations)){
-        console.log('player win')
+        states.views.victory = 'player';
+        showButton()
         return true
     } else if (checkWin(states.values.computerLocations)) {
-        console.log('computer win')
+        states.views.victory = 'computer';
+        showButton()
         return true
     } else if (checkDrawn()){
-        console.log('draw game')
+        states.views.victory = 'draw';
+        showButton()
         return true
     }
     return false
