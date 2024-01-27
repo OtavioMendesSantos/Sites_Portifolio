@@ -19,7 +19,7 @@ article{
 .project-type{
     grid-column: 1 / -1;
     text-align: left;
-    width: 70%;
+    width: 80%;
     position: relative;
 }
 
@@ -57,6 +57,7 @@ article{
     width: 306px; /* Deve ter uma forma melhor de fazer isso */
     padding: 10px;
     gap: 10px;
+    box-shadow: 2px 3px 3px #0000007d;
 
     border-top: 10px solid var(--yellowLogo);
     background-color: #222222;
