@@ -18,6 +18,33 @@ article{
 
 .project-type{
     grid-column: 1 / -1;
+    text-align: left;
+    width: 70%;
+    position: relative;
+}
+
+.project-type::before{
+    content: '';
+    display: block;
+    width: 300px;
+    height: 10px;
+    background-color: #222222;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-110%, -50%);
+}
+
+.project-type::after{
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #222222;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-200%, -50%) rotate(45deg);
 }
 
 /* Project individual */
