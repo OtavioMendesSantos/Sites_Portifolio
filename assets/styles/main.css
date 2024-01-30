@@ -121,6 +121,7 @@ div#toTop{
     right: 30px;
     display: none; 
     cursor: pointer;
+    user-select: none;
 }
 
 #toTop img{
