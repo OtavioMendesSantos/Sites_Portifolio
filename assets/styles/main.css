@@ -1,6 +1,8 @@
 /* Importando Conteúdo */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
 /* Configurações Gerais */
 body{
     margin: 0;
@@ -10,14 +12,15 @@ body{
     background-color: var(--colorBackgroundBody);
 
     --colorBackgroundBody: #ececec;
-    --colorheader: #222222;
+    --colorHeader: #222222;
     --fontTitle: 'Playfair Display SC', serif;
-    --fontMain: Arial, Helvetica, sans-serif;
+    --fontMain: 'Oxygen', Arial, sans-serif;
 }
 
 h1, h2{
     font-family: var(--fontTitle);
     font-weight: 800;
+    color: var(--colorHeader);
 }
 
 h1{
@@ -26,9 +29,18 @@ h1{
     margin: 0 0 16px 0 ;
 }
 
+h2{
+    margin: 0;
+}
+
+p{
+    color: var(--colorHeader);
+}
+
 p, a{
     font-size: 1.2em;
     font-family: var(--fontMain);
+    font-weight: 400;
     margin: 0;
 }
 
@@ -38,7 +50,7 @@ span{
 
 /* Configurando Header e Seus Componentes */
 header{
-    background-color: var(--colorheader);
+    background-color: var(--colorHeader);
     height: 80px;
     display: grid;
     grid-template-columns: 150px 3fr;
@@ -84,7 +96,7 @@ li.linkMenu{
 
 li.linkMenu:hover{
     background-color: #323232;
-    box-shadow: 2px 2px 2px var(--colorheader);
+    box-shadow: 2px 2px 2px var(--colorHeader);
 }/*Seria legal fazer uma animação que quando passasse o mouse, o espaço das letras aumentariam um pouco */
 
 li.linkMenu a{
@@ -93,15 +105,15 @@ li.linkMenu a{
 
 /* Configurando Main */
 main{
-    min-height: 73vh;
     padding: 10px;
+    min-height: 74vh;
 }
 
 div#toTop{
     width: 50px;
     height: 50px;
     background-color: var(--colorBackgroundBody);
-    border: 2px solid var(--colorheader);
+    border: 2px solid var(--colorHeader);
     border-radius: 5px;
     position: fixed;
     bottom: 30px;
@@ -122,6 +134,7 @@ footer{
     width: 100%;
     padding: 30px;
     text-align: center;
+    bottom: 0px;
 }
 
 footer p a,footer p , .linkMenu a{

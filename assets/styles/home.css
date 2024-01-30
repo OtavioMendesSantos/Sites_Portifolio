@@ -1,36 +1,72 @@
-.conteiner{
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    gap: 20px;
+/* Formatando Container */
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
-.conteiner-left{
-    max-width: 250px;
-    background-color: #323232;
-    padding: 10px;
-    
+
+.screw{
+    position: absolute;
+    border: 1px solid var(--colorHeader);
+    border-radius: 50% ;
+}
+
+.screw1{
+    top: 10px;
+    left: 10px;
+}
+
+.screw2{
+    top: 10px;
+    right: 10px;
+}
+
+.screw3{
+    bottom: 10px;
+    right: 10px;
+}
+
+.screw4{
+    bottom: 10px;
+    left: 10px;
+}
+
+/* Formatando cantainer-left */
+.container-left{
+    border: 5px solid #222222;
+    border-radius: 5px;
+    padding: 30px;
+    position: relative;
 }
 
 #profile{
-    width: 100%;
-    border: 1px solid #000;
-    border-radius: 5px ;
+    max-width: 300px;
+    border: 1px solid var(--colorHeader);
+    border-radius: 5px;
 }
 
-.conteiner-left p{
+.container-left h2{
+    margin: 10 auto;
     text-align: center;
-    margin: 10px;
-    color: #fff;
 }
 
-.conteiner-left h2{
-    margin: 10px;
+.container-left p{
     text-align: center;
-    border-bottom: 2px solid black;
-    color: #fff;
+    margin-bottom: 10px;
+}
+
+#my-skills{
+    border-bottom: 2px solid #222222;
+}
+
+/* Formatando tooltip e skills */
+.skill img{
+    width: 46px;
+    height: 46px;
 }
 
 .skills{
@@ -77,43 +113,48 @@ margin: 5px;
 }
 
 .skill:hover .tooltip-text{
-   top: -100%;
+   top: -50%;
    visibility: visible;
    opacity: 1;
 }
 
-.conteiner-right{
-    padding: 10px;
-}
-
-.conteiner-right p{
-    margin: 0 0 10px 0;
-    text-indent: 20px;
-    
-}
-
-.conteiner-right a{
+/* Formatando cantainer-right */
+.container-right{
+    border: 5px solid #222222;
+    border-radius: 5px;
+    padding: 30px;
     position: relative;
-    color: #000;
+    flex: 1 0 300px;
+    display: grid;
+    align-content: center;
+}
+
+.container-right p{
+    text-indent: 20px;
+    margin-bottom: 20px;
+}
+
+.container-right a{
+    color: #222;
     text-decoration: none;
 }
 
-.conteiner-right a:hover{
+.container-right a:hover{
     text-decoration: underline;
 }
 
-.conteiner-right a>img{
-    position: absolute;
-    bottom: 0px;
-    height: 1.2em;
-}
 
 @media only screen and (max-width: 650px){
-    .conteiner{
-        grid-template-columns: 1fr ;
-    }
-    
-    .conteiner-right a {
+    .container-right a {
         text-decoration: underline;
     }
+
+    .container-right{
+        order: 0;
+    }
+    
+    .container-left{
+        order: 1;
+    }
+    
 }
