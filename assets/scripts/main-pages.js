@@ -18,7 +18,7 @@ function createHeader(){
     const divMenuHamburguer = document.createElement('div')
     divMenuHamburguer.classList.add('menu-hamburguer')
     const imgMenu = document.createElement('img')
-    imgMenu.setAttribute('src', "../assets/svg/menu-hamburguer.svg")
+    imgMenu.setAttribute('src', "../assets/svg/menu-hamburguer-yellow.svg")
     
     const ulMenu = document.createElement('ul')
     ulMenu.classList.add('menu')

@@ -10,7 +10,7 @@ article{
 
 .projects{
     display: grid;
-    
+    margin-bottom: 20px;
     gap: 20px;
     justify-items: center;
     align-items: center;
