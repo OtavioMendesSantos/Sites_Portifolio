@@ -25,8 +25,8 @@ function createHeader(){
     
     const li = [];
     const link = [];
-    const menuItens = ['Formação', 'Contatos', 'Projetos', 'Hobbies'];
-    const menuLinks = ['formacao.html', 'contatos.html', 'projetos.html', 'hobbies.html'];
+    const menuItens = ['Formação', 'Projetos', 'Hobbies'];
+    const menuLinks = ['formacao.html', 'projetos.html', 'hobbies.html'];
     menuItens.forEach((item, index)=>{
         li[index] = document.createElement('li')
         li[index].classList.add('linkMenu')

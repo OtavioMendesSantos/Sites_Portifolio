@@ -6,6 +6,15 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    align-items: flex-start;
+    
+}
+
+.conatiner-box{
+    border: 5px solid #222222;
+    border-radius: 5px;
+    padding: 30px;
+    position: relative;
 }
 
 
@@ -35,33 +44,46 @@
     left: 10px;
 }
 
-/* Formatando cantainer-left */
-.container-left{
-    border: 5px solid #222222;
-    border-radius: 5px;
-    padding: 30px;
-    position: relative;
-}
-
+/* Formatando cantainer-1 */
 #profile{
     max-width: 300px;
     border: 1px solid var(--colorHeader);
     border-radius: 5px;
 }
 
-.container-left h2{
-    margin: 10 auto;
-    text-align: center;
-}
+ #profile-name{
+    font-family: var(--fontTitle);
+    font-weight: 800;
+    color: var(--colorHeader);
+    font-size: 24px;
+    margin: 0;
+ }
 
-.container-left p{
+.container-1 h2{
+    margin: 10px auto 0;
     text-align: center;
-    margin-bottom: 10px;
-}
-
-#my-skills{
     border-bottom: 2px solid #222222;
 }
+
+.container-1 p{
+    text-align: center;
+}
+
+.contacts-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contacts-list img{
+    width: 46px;
+    height: 46px;
+    margin: 5px;
+}
+
 
 /* Formatando tooltip e skills */
 .skill img{
@@ -69,6 +91,12 @@
     height: 46px;
 }
 
+/* list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px; */
 .skills{
     margin: 0;
     padding: 0;
@@ -80,11 +108,11 @@
 
 .skills img{
 margin: 5px;
+z-index: 2;
 }
 
 .skill{
     position: relative;
-    cursor: pointer;
 }
 
 .tooltip-text{
@@ -98,6 +126,7 @@ margin: 5px;
     padding: 5px 10px;
     border-radius: 5px;
     visibility: hidden;
+    z-index: 1;
     opacity: 0; /* Pendente: ver isso */
     transition: opacity 0.5s ease ; /* Pendente: ver isso */
 }
@@ -113,48 +142,35 @@ margin: 5px;
 }
 
 .skill:hover .tooltip-text{
-   top: -50%;
+   top: -70%;
    visibility: visible;
    opacity: 1;
 }
 
-/* Formatando cantainer-right */
-.container-right{
-    border: 5px solid #222222;
-    border-radius: 5px;
-    padding: 30px;
-    position: relative;
-    flex: 1 0 300px;
+/* Formatando cantainer-2 */
+.container-2{
+    flex: 1;
+    min-width: 300px;
     display: grid;
     align-content: center;
+    gap: 20px;
 }
 
-.container-right p{
+.container-2 p{
     text-indent: 20px;
-    margin-bottom: 20px;
 }
 
-.container-right a{
-    color: #222;
-    text-decoration: none;
-}
-
-.container-right a:hover{
+.container-2 a:hover{
     text-decoration: underline;
 }
-
-
-@media only screen and (max-width: 650px){
-    .container-right a {
-        text-decoration: underline;
-    }
+/* @media only screen and (max-width: 650px){
 
     .container-right{
         order: 0;
     }
     
-    .container-left{
+    .container-1{
         order: 1;
     }
     
-}
+} */
