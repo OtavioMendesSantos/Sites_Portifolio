@@ -89,7 +89,7 @@ li.linkMenu{
     
     font-size: 1em;
     margin-left: 10px;
-    padding: 13px;
+    padding: 13px 26px;
     font-family: var(--fontTitle);
     color: white;
     font-weight: bold;
@@ -185,7 +185,6 @@ footer p a,footer p , .linkMenu a{
     
     li.linkMenu{
         margin: 0px;
-        padding: 13px;
         width: 100px;
     }
 }
