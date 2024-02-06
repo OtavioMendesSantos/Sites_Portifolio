@@ -97,10 +97,8 @@ ul.menu{
 li.linkMenu{
     display: inline-block;
     background-color: #424242;
-    
     font-size: 1em;
     margin-left: 10px;
-    padding: 13px 26px;
     font-family: var(--fontTitle);
     color: white;
     font-weight: bold;
@@ -112,6 +110,8 @@ li.linkMenu:hover{
 }/*Seria legal fazer uma animação que quando passasse o mouse, o espaço das letras aumentariam um pouco */
 
 li.linkMenu a{
+    display: inline-block;
+    padding: 13px 26px;
     text-decoration: none;
 }
 
@@ -196,6 +196,10 @@ footer p a,footer p , .linkMenu a{
     
     li.linkMenu{
         margin: 0px;
-        width: 100px;
+        width: 100%;
+    }
+
+    li.linkMenu a{
+        width: 110px;
     }
 }
