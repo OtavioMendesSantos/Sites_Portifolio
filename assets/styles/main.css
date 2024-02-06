@@ -3,6 +3,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 
+/* Configurações de Variáveis Globais */
+:root{
+    --colorBackgroundBody: #ececec;
+    --colorHeader: #222222;
+    --fontTitle: 'Playfair Display SC', serif;
+    --fontMain: 'Oxygen', Arial, sans-serif;
+    --color01: #ffff00;
+
+    --minimumSpacing: 3px;
+    --smallSpacing: 10px;
+    --averageSpacing:20px;
+    --largeSpacing: 40pc;
+}
+
 /* Configurações Gerais */
 body{
     margin: 0;
@@ -11,12 +25,6 @@ body{
     max-height: fit-content ;
     background-color: var(--colorBackgroundBody);
     box-sizing: border-box;
-
-    --colorBackgroundBody: #ececec;
-    --colorHeader: #222222;
-    --fontTitle: 'Playfair Display SC', serif;
-    --fontMain: 'Oxygen', Arial, sans-serif;
-    --color01: #ffff00;
 }
 
 h1, h2{
@@ -109,7 +117,7 @@ li.linkMenu a{
 
 /* Configurando Main */
 main{
-    padding: 10px;
+    padding:  0 10px 10px 10px;
     min-height: 74vh;
 }
 
