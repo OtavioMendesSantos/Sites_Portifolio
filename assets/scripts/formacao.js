@@ -55,5 +55,5 @@ function showSlides(n){
     slideInterval = setTimeout(()=>{
         slideIndex++
         showSlides(slideIndex)
-    }, 5000)
+    }, 15000)
 }
