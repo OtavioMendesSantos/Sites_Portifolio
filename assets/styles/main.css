@@ -10,11 +10,13 @@ body{
     min-height: 100vh;
     max-height: fit-content ;
     background-color: var(--colorBackgroundBody);
+    box-sizing: border-box;
 
     --colorBackgroundBody: #ececec;
     --colorHeader: #222222;
     --fontTitle: 'Playfair Display SC', serif;
     --fontMain: 'Oxygen', Arial, sans-serif;
+    --color01: #ffff00;
 }
 
 h1, h2{
