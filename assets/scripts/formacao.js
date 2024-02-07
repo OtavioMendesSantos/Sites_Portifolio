@@ -1,20 +1,33 @@
-function initHideList(){
+/* function initHideList(){
     const lists = document.querySelectorAll('.list')
     //console.log(lists)
 
     function hideList(event){
-        clickedList = event.target
+        let = clickedList = event.target
         clickedList.nextElementSibling.classList.toggle('hidden')
         clickedList.classList.toggle('active')
     }
-    function teste(){console.log('a')}
 
     lists.forEach((list)=>{
         list.addEventListener('click', hideList)
     }) 
 }
-initHideList()
+initHideList() */
 
+function initHideAllList(){
+    const tittleList = document.querySelectorAll('.tittle-list')
+
+    function hideTittleList(event){
+        let = clickedTittleList = event.target
+        clickedTittleList.nextElementSibling.classList.toggle('hidden')
+        clickedTittleList.classList.toggle('active')
+    }
+
+    tittleList.forEach((tittle)=>{
+        tittle.addEventListener('click', hideTittleList)
+    })
+}
+initHideAllList()
 
 /* Carrossel / Carousel */
 let slideIndex = 1;

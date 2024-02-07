@@ -4,40 +4,6 @@ main{
     margin: 0 auto;
 }
 
-/* Formatando Lista */
-.list{
-    margin: 0 0 0 10px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    margin: 10px 0 10px 0 ;
-}
-
-.list::after{
-    content: url('../svg/arrow_drop_down.svg');
-    position: relative;
-    top: 5px;
-}
-
-.active::after{
-    content: url('../svg/arrow_drop_up.svg');
-    position: relative;
-    top: 5px;
-}
-
-.list li {
-    font-size: 1.3rem;
-}
-
-ul{
-    list-style: none;
-    padding: 0;
-    margin: 0 0 0 30px;
-}
-
-ul.hidden{
-    display: none;
-}
-
 /* Estilizando Carrossel */
 .container-carousel{
     position: relative;
@@ -129,4 +95,48 @@ ul.hidden{
 @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
+}
+
+/* Formatando Lista */
+.curses-list{
+    margin: 0;
+    background-color: #E8E8E8;/* Cor temporária */
+}
+
+.tittle-list{
+    background-color: #D9D9D9;/* Cor temporária */
+    padding: var(--averageSpacing);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tittle-list::after{
+    content: url("../svg/toggle_item.svg");
+    transform: rotate(90deg);
+    transition: 0.3s;
+}
+
+.active::after{
+    transform: rotateX(0deg);
+}
+
+.list{
+    margin: 0 0 10px 40px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+ul{
+    margin: 0 0 20px 40px;
+}
+
+ul li p a{
+    color: var(--colorHeader);
+}
+
+.hidden{
+    opacity: 0;
+    display: none;
+    margin-bottom: 0;
 }
