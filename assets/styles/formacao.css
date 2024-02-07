@@ -129,6 +129,9 @@ main{
 
 ul{
     margin: 0 0 20px 40px;
+    transform-origin: top;
+    animation-name: cortinaCaindo;
+    animation-duration: 0.3s;
 }
 
 ul li p a{
@@ -140,3 +143,9 @@ ul li p a{
     display: none;
     margin-bottom: 0;
 }
+
+@keyframes cortinaCaindo {
+    0%   {transform: scaleY(0);}
+    100% {transform: scaleY(1);}
+  }
+  
