@@ -13,7 +13,8 @@ function initTimer(n){
             timerStart -= 1000
             minutes = Math.floor(timerStart/1000/60)
             seconds = ((timerStart/1000) - (minutes * 60))
-            timer.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`
+            timer.innerHTML = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+            document.title = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} Pomodoro`
         }
     }, 1000);
 }

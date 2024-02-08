@@ -1,28 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 *{
     --backgroundColor: rgb(149, 255, 143);
     --importedFont: 'Patrick Hand', Arial, Helvetica, sans-serif;
+    --timerFont: 'Roboto Mono', monospace;
 
     --color01: #95FF91;
-    --color02: #B9FFB9;
-    --color03: #FF0D1F;
-    --color04: #A53B3D;
+    --color02: #FF0D1F;
+    --color03: #A53B3D;
 }
 
 body{
     background-color: var(--backgroundColor);
-}
-
-body{
     font-family: var(--importedFont);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: 100vh;
     justify-items: center;
     align-items: center;
-    justify-content: center;
-    align-content: center;
+
+    user-select: none;
+}
+
+h1{
+    grid-column: 2;
+    font-size: 4em;
+    z-index: 3;
 }
 
 section{
@@ -36,10 +40,9 @@ section{
     outline-offset: 2px;
     border-radius: 10px;
     padding: 10px;
-    margin-bottom: 100px;
 }
 
-section h1{
+section h2{
     color: rgb(0, 0, 0);
     text-align: center;
     font-size: 2em;
@@ -54,29 +57,45 @@ section p{
     grid-column: 1/4;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
+    gap: 20px;
     z-index: 3;
     width: 100%;
+}
+
+#timer{
+    font-family: var(--timerFont);
 }
 
 .set-timer{
     display: block;
     flex: 1 0 200px;
     max-width: 300px;
-    margin: auto;
     
+    color: #ffffff;
+    background-color: var(--color02);
     font-size: 2em;
-    background-color: var(--color03);
+
     border: 1px solid #ffffff;
     outline: 1px solid #ffffff;
     outline-offset: 2px;
     border-radius: 10px;
-    padding: 10px;
-    color: #ffffff;
+    padding: 20px;
+
     transition: 0.3s;
     cursor: pointer;
 }
 
 .set-timer:hover{
-    background-color: var(--color04);
+    background-color: var(--color03);
+}
+
+footer{
+    grid-column: 1/-1;
+}
+
+footer a{
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5em;
 }
