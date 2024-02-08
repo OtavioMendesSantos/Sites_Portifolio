@@ -8,4 +8,6 @@ let updateClock = setInterval(()=>{
     seconds = (now.getSeconds()).toString().padStart(2, '0');
     
     timer.innerHTML = `${hours}:${minutes}:${seconds}`;
+
+    document.title = `${hours}:${minutes}:${seconds} Relógio Virtual`;
 },1000) 
