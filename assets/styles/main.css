@@ -14,7 +14,7 @@
     --minimumSpacing: 3px;
     --smallSpacing: 10px;
     --averageSpacing:20px;
-    --largeSpacing: 40pc;
+    --largeSpacing: 40px;
 }
 
 /* Configurações Gerais */
@@ -25,6 +25,7 @@ body{
     max-height: fit-content ;
     background-color: var(--colorBackgroundBody);
     box-sizing: border-box;
+    padding-bottom: 150px; /* Precisa ser do tamanho da altura do footer */
 }
 
 h1, h2{
@@ -118,7 +119,6 @@ li.linkMenu a{
 /* Configurando Main */
 main{
     padding:  0 10px 10px 10px;
-    min-height: 74vh;
 }
 
 div#toTop{
@@ -142,7 +142,7 @@ div#toTop{
 /* Configurando Footer e seus Componentes */
 footer{
     background-color: #222222;
-    position: relative;
+    position: absolute;
     box-sizing: border-box;
     width: 100%;
     padding: 30px;
