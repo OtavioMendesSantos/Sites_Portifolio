@@ -3,6 +3,11 @@
 *{
     --backgroundColor: rgb(149, 255, 143);
     --importedFont: 'Patrick Hand', Arial, Helvetica, sans-serif;
+
+    --color01: #95FF91;
+    --color02: #B9FFB9;
+    --color03: #FF0D1F;
+    --color04: #A53B3D;
 }
 
 body{
@@ -16,6 +21,8 @@ body{
     height: 100vh;
     justify-items: center;
     align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 section{
@@ -29,6 +36,7 @@ section{
     outline-offset: 2px;
     border-radius: 10px;
     padding: 10px;
+    margin-bottom: 100px;
 }
 
 section h1{
@@ -40,4 +48,35 @@ section h1{
 section p{
     font-size: 6em;
     text-align: center;
+}
+
+.buttons{
+    grid-column: 1/4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 3;
+    width: 100%;
+}
+
+.set-timer{
+    display: block;
+    flex: 1 0 200px;
+    max-width: 300px;
+    margin: auto;
+    
+    font-size: 2em;
+    background-color: var(--color03);
+    border: 1px solid #ffffff;
+    outline: 1px solid #ffffff;
+    outline-offset: 2px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #ffffff;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.set-timer:hover{
+    background-color: var(--color04);
 }
