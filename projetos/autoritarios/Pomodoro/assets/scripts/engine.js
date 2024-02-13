@@ -41,6 +41,15 @@ function showMenu(){
 
 mobileMenu.addEventListener('click', showMenu)
 
+function hideMenu(event){
+    if(event.target != menuSettings && event.target != mobileMenu){
+        menuSettings.classList.remove('active')
+    } else {
+        console.log(event.target)
+    }
+}
+
+window.addEventListener('click', hideMenu)
 
 /* Timer */
 const timer = document.querySelector('#timer')
