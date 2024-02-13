@@ -41,7 +41,7 @@
 
                 <div class="container-input-number">
                     <button class="decrement">-</button>
-                    <input type="number" id="pomodoro-timer" value="25">
+                    <input type="number" id="pomodoro-timer" min="0" value="25">
                     <button class="increase">+</button>
                 </div>
                 
@@ -53,7 +53,7 @@
 
                 <div class="container-input-number">
                     <button class="decrement">-</button>
-                    <input type="number" id="rest-timer" value="5">
+                    <input type="number" id="rest-timer" min="0" value="5">
                     <button class="increase">+</button>
                 </div>
 
@@ -64,9 +64,9 @@
                 <img src="assets/svg/cycles.svg" alt="Ciclos" title="Ciclos">
 
                 <div class="container-input-number">
-                    <button class="decrement">-</button>
-                    <input type="number" id="number-cycle" value="1">
-                    <button class="increase">+</button>
+                    <button class="decrement" disabled>-</button>
+                    <input type="number" id="number-cycle" disabled min="0" value="1">
+                    <button class="increase" disabled>+</button>
                 </div>
 
                 <label for="number-cycle" class="label-text">Pomodoro(s)</label>
