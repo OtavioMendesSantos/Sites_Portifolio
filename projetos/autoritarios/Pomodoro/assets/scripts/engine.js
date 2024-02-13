@@ -1,7 +1,68 @@
+/* Animations Settings */
+const checkboxAnimation = document.querySelector('#checkbox-animation')
+checkboxAnimation.addEventListener('click', controlAnimation)
+
+function controlAnimation(){
+    if(checkboxAnimation.checked){
+        document.querySelector('.full-apple').style.animationPlayState = 'running';
+    }else{
+        document.querySelector('.full-apple').style.animationPlayState = 'paused';
+    }
+}
+
+/* Timer Settings */
+let decrementButtons = document.querySelectorAll('.decrement')
+
+decrementButtons.forEach((decrementButton)=>{
+    decrementButton.addEventListener('click', decrementNumber)
+})
+
+function decrementNumber(event){
+    event.target.nextElementSibling.stepDown()
+}
+
+let increaseButtons = document.querySelectorAll('.increase')
+
+increaseButtons.forEach((increaseButton)=>{
+    increaseButton.addEventListener('click', increaseNumber)
+})
+
+function increaseNumber(event){
+    event.target.previousElementSibling.stepUp()
+}
+
+/* Settings Mobile Menu */
+const mobileMenu = document.querySelector('#show-settings')
+const menuSettings = document.querySelector('.settings')
+
+function showMenu(){
+    menuSettings.classList.toggle('active')
+} 
+
+mobileMenu.addEventListener('click', showMenu)
+
+
+/* Timer */
 const timer = document.querySelector('#timer')
 let decreaseTime, minutes, seconds;
 
-function initTimer(n){
+function initTimer(x){
+    let n;
+    const pomodoroTimer = document.querySelector('#pomodoro-timer').value
+    const restTimer = document.querySelector('#rest-timer').value
+
+    switch(x){
+        case 1:
+            n = pomodoroTimer
+            break
+        case 2:
+            n = restTimer
+            break
+        case 3:
+            n = restTimer * 3
+            break
+    }
+
     let timerStart = Number(n * 60 * 1000)
     
     clearInterval(decreaseTime)

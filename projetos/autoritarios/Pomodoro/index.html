@@ -11,42 +11,74 @@
 
 </head>
 <body>
-
-    <nav id="settings">
+    <div id="show-settings"></div>
+    <nav class="settings">
         <ul>
             <li class="menu-item">
                 <img src="assets/svg/animation.svg" alt="Animação" title="Animação">
-                <label for="checkbox-animation">Animações</label>
-                <input type="checkbox" id="checkbox-animation">
+
+                <label class="switch">
+                    <input type="checkbox" id="checkbox-animation" checked>
+                    <span class="slider"></span>
+                </label>
+
+                <label for="checkbox-animation" class="label-text">Animações</label>
             </li>
             
             <li class="menu-item">
                 <img src="assets/svg/music_player.svg" alt="Som" title="Som">
-                <label for="checkbox-sound">Som</label>
-                <input type="checkbox" id="checkbox-sound">
+
+                <label class="switch">
+                    <input type="checkbox" id="checkbox-sound" disabled>
+                    <span class="slider"></span>
+                </label>
+
+                <label for="checkbox-sound" class="label-text">Som</label>
             </li>
 
             <li class="menu-item">
                 <img src="assets/svg/timer.svg" alt="Temporizador" title="Temporizador">
-                <label for="number-timer">Temporizador Padrão</label>
-                <input type="number" id="number-timer" placeholder="25 minutos">
+
+                <div class="container-input-number">
+                    <button class="decrement">-</button>
+                    <input type="number" id="pomodoro-timer" value="25">
+                    <button class="increase">+</button>
+                </div>
+                
+                <label for="pomodoro-timer" class="label-text">Pomodoro Padrão</label>
             </li>
 
             <li class="menu-item">
                 <img src="assets/svg/rest.svg" alt="Descanso" title="Descanso">
-                <label for="rest-timer">Denscanso Padrão</label>
-                <input type="number" id="rest-timer" placeholder="5 minutos">
+
+                <div class="container-input-number">
+                    <button class="decrement">-</button>
+                    <input type="number" id="rest-timer" value="5">
+                    <button class="increase">+</button>
+                </div>
+
+                <label for="rest-timer" class="label-text">Denscanso Padrão</label>
             </li>
            
             <li class="menu-item">
-                <img src="assets/svg/cycles.svg" alt="Ciclos" title="Clicos">
-                <label for="number-cycle">Ciclos - 25 5 25</label>
-                <input type="number" id="number-cycle" placeholder="1 ciclo">
+                <img src="assets/svg/cycles.svg" alt="Ciclos" title="Ciclos">
+
+                <div class="container-input-number">
+                    <button class="decrement">-</button>
+                    <input type="number" id="number-cycle" value="1">
+                    <button class="increase">+</button>
+                </div>
+
+                <label for="number-cycle" class="label-text">Pomodoro(s)</label>
             </li>
 
-            <!-- <li class="menu-item">
+            <!-- Futuramente vou adicionar músicas e sons ao site
+
+            <li class="menu-item">
                <iframe width="560" height="315" src="https://www.youtube.com/embed/jfKfPfyJRdk?si=jgzvAZKucWygxm7C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" id="lofi-girl"></iframe> 
-            </li> -->
+            </li> 
+
+            -->
         </ul>
     </nav>
 
@@ -66,13 +98,15 @@
     </section>
 
     <div class="buttons">
-        <button class="set-timer" onclick="initTimer(25)">25 Minutos</button>
-        <button class="set-timer" onclick="initTimer(5)">5 Minutos</button>
+        <button class="set-timer" onclick="initTimer(1)">Pomodoro</button>
+        <button class="set-timer" onclick="initTimer(2)">Descanso Curto</button>
+        <button class="set-timer" onclick="initTimer(3)">Descanso Longo</button>
     </div>
 
     <footer>
         <a href="https://github.com/OtavioMendesSantos" target="_blank">Desenvolvido por @OtávioMendesSantos</a>
     </footer>
+
     <script src="assets/scripts/engine.js"></script>
 </body>
 </html>

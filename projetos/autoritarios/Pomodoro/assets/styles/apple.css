@@ -4,6 +4,7 @@
     position: absolute;
     filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.35));
     animation: float 2s ease-in-out infinite;
+    animation-play-state: running;
 }
 
 #apple-css{
