@@ -15,16 +15,16 @@
 initHideList() */
 
 function initHideAllList(){
-    const tittleList = document.querySelectorAll('.tittle-list')
+    const titleList = document.querySelectorAll('.tittle-list')
 
-    function hideTittleList(event){
-        let = clickedTittleList = event.target
-        clickedTittleList.nextElementSibling.classList.toggle('hidden')
-        clickedTittleList.classList.toggle('active')
+    function hideTitleList(event){
+        let = clickedTitleList = event.target
+        clickedTitleList.nextElementSibling.classList.toggle('hidden')
+        clickedTitleList.classList.toggle('active')
     }
 
-    tittleList.forEach((tittle)=>{
-        tittle.addEventListener('click', hideTittleList)
+    titleList.forEach((title)=>{
+        title.addEventListener('click', hideTitleList)
     })
 }
 initHideAllList()
