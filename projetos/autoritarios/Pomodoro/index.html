@@ -113,10 +113,12 @@
 
             
             <li class="item-note">
-                <button class="button-note add-note">+</button>
-                <input type="text" placeholder="Insira sua atividade..." class="input-note">
+                <button class="button-note add-note" id="addNewNote">+</button>
+                <input type="text" placeholder="Insira sua atividade..." autocomplete="off" class="input-note" id="userNewNote">
             </li>
         </ul>
+        <button onclick="localStorage.clear()">Limpar Notas (teste)</button>
+        <button onclick="console.log(localStorage)">Console Notas (teste)</button>
     </section>
 
     <footer>

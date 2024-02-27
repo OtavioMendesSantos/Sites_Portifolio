@@ -86,3 +86,41 @@ function initTimer(x){
         }
     }, 1000);
 }
+
+/* Notes */
+/* 
+const userNotes = document.querySelectorAll('.user-notes')
+
+function yToString(){
+    let nameKey = ("note" + lastItem).toString()
+    lastItem++
+    return nameKey
+}
+
+function addNewNote(){
+    localStorage.setItem(yToString() ,userNewNote.value)
+    userNewNote.value = ""
+    //userNotes.push('')
+}
+
+function addNote(){
+    userNewNote.previousElementSibling.innerHTML = 'a'
+}
+
+const buttonNewNote = document.querySelector("#addNewNote")
+const userNewNote = document.querySelector("#userNewNote")
+
+buttonNewNote.addEventListener('click', addNewNote) 
+*/
+
+function initNotes(){
+    let lastItem = 0
+    if(localStorage.length > 0){
+        let keys = Object.keys(localStorage);
+        let lastKey = keys[keys.length-1];
+        lastItem = Number(lastKey.slice(4))
+        lastItem++
+        console.log(`${keys} / ${lastKey} + ${lastItem}`)
+    }
+}
+initNotes()
