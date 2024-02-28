@@ -88,39 +88,94 @@ function initTimer(x){
 }
 
 /* Notes */
-/* 
-const userNotes = document.querySelectorAll('.user-notes')
+const buttonNewNote = document.querySelector("#buttonNewNote")
+const userNewNote = document.querySelector("#inputNewNote")
+const containerNewNote = document.querySelector("#add-item-note")
 
-function yToString(){
+let lastItem = 0
+let objectKeys = Object.keys(localStorage);
+const userNotes = []
+
+const ordenedNotes = Object.keys(localStorage);
+bubbleSort(ordenedNotes)
+
+function Note(key, value) {
+    this.key = key;
+    this.value = value;
+} 
+
+function rememberNotes(){    
+    if(localStorage.length > 0){
+        let lastKey = keyToNumber(ordenedNotes[ordenedNotes.length - 1])
+        ordenedNotes.forEach((item)=>{
+            addNote(item, localStorage.getItem(item))
+        });
+    
+        lastItem = lastKey.valueOf()
+        lastItem++
+    }
+}
+
+function nameToString(){
     let nameKey = ("note" + lastItem).toString()
     lastItem++
     return nameKey
 }
 
-function addNewNote(){
-    localStorage.setItem(yToString() ,userNewNote.value)
-    userNewNote.value = ""
-    //userNotes.push('')
+function keyToNumber(key){
+    //Function only for key "note"
+    return Number(key.slice(4))
 }
 
-function addNote(){
-    userNewNote.previousElementSibling.innerHTML = 'a'
+function bubbleSort(itensArray){
+    //Uses an Array as a parameter 
+    //Caution, this function modify the Array
+    for(let i = 0; i < itensArray.length; i++){
+        for(let x = i; x < itensArray.length; x ++){
+            if(keyToNumber(itensArray[x]) < keyToNumber(itensArray[i])){
+                let aux = itensArray[i]
+                itensArray[i] = itensArray[x]
+                itensArray[x] = aux
+            }
+        }
+    }
 }
 
-const buttonNewNote = document.querySelector("#addNewNote")
-const userNewNote = document.querySelector("#userNewNote")
+function addNote(keyNote,userNote){
+    let index = keyToNumber(keyNote)
+    let listNotes = document.querySelector(".user-notes")
 
-buttonNewNote.addEventListener('click', addNewNote) 
-*/
+    userNotes.push(new Note(keyNote, userNote))
+    userNotes[index].element = document.createElement('li')
+    userNotes[index].element.classList.add("item-note")
+    userNotes[index].element.id = keyNote
+
+    let button = document.createElement("button")
+    button.classList.add("button-note", "remove-note")
+    button.addEventListener("click", ()=>{}) //TODO: Implementar event
+    button.innerText = "-"
+    userNotes[index].element.appendChild(button)
+
+    let paragraph = document.createElement("p")
+    paragraph.innerText = userNote
+    userNotes[index].element.appendChild(paragraph)
+
+    listNotes.insertBefore(userNotes[index].element, containerNewNote)
+} 
+
+function newNote(){
+    if(userNewNote.value == ""){
+        userNewNote.placeholder = "Por favor, informe uma atividade válida."
+    } else {
+        let nameKey = nameToString()
+        localStorage.setItem(nameKey, userNewNote.value)
+        addNote(nameKey, userNewNote.value)
+        userNewNote.value = ""
+    }
+}
 
 function initNotes(){
-    let lastItem = 0
-    if(localStorage.length > 0){
-        let keys = Object.keys(localStorage);
-        let lastKey = keys[keys.length-1];
-        lastItem = Number(lastKey.slice(4))
-        lastItem++
-        console.log(`${keys} / ${lastKey} + ${lastItem}`)
-    }
+    rememberNotes()
+    buttonNewNote.addEventListener('click', newNote) 
 }
 initNotes()

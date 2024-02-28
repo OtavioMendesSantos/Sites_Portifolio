@@ -283,7 +283,7 @@ h1{
     border-radius: 5px;
 }
 
-.item-note{
+.item-note, #add-item-note{
     display: flex;
     /* justify-content: space-between; */
     gap: 10px;
