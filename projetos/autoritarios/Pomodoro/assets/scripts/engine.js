@@ -177,10 +177,10 @@ function newNote(){
     }
 }
 
-function deleteElementNote(keyId){
-    document.querySelector(`#${keyId}`).remove()
+/* function deleteAllElementNote(keyId){
+    document.getElementById(keyId).remove()
 }
-
+ */
 function deleteNote(event){
     const liElement = event.target.parentElement
     const index = keyToNumber(liElement.id)
@@ -198,10 +198,10 @@ function deleteNote(event){
     ordenedNotes = Object.keys(localStorage);
     bubbleSort(ordenedNotes)
 
-    for(let i = 0; i < userNotes.length; i++){ 
+    /* for(let i = 0; i < userNotes.length; i++){ 
         let x = userNotes[i].key
-        deleteElementNote(x)
-    }
+        deleteAllElementNote(x)
+    } */
     rememberNotes()
 }
 
