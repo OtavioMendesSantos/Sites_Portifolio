@@ -91,12 +91,12 @@ function initTimer(x){
 const buttonNewNote = document.querySelector("#buttonNewNote")
 const userNewNote = document.querySelector("#inputNewNote")
 const containerNewNote = document.querySelector("#add-item-note")
+const listNotes = document.querySelector(".user-notes")
 
 let lastItem = 0
-let objectKeys = Object.keys(localStorage);
 const userNotes = []
 
-const ordenedNotes = Object.keys(localStorage);
+let ordenedNotes = Object.keys(localStorage);
 bubbleSort(ordenedNotes)
 
 function Note(key, value) {
@@ -104,17 +104,17 @@ function Note(key, value) {
     this.value = value;
 } 
 
-function rememberNotes(){    
+function rememberNotes(){
     if(localStorage.length > 0){
+        //userNotes = []
         let lastKey = keyToNumber(ordenedNotes[ordenedNotes.length - 1])
         ordenedNotes.forEach((item)=>{
             addNote(item, localStorage.getItem(item))
-        });
-    
+        });  
         lastItem = lastKey.valueOf()
         lastItem++
     }
-}
+};
 
 function nameToString(){
     let nameKey = ("note" + lastItem).toString()
@@ -143,19 +143,22 @@ function bubbleSort(itensArray){
 
 function addNote(keyNote,userNote){
     let index = keyToNumber(keyNote)
-    let listNotes = document.querySelector(".user-notes")
-
-    userNotes.push(new Note(keyNote, userNote))
+    
+    if(!userNotes[index]){
+        userNotes.push(new Note(keyNote, userNote))
+    }
+    
+    //Item Note
     userNotes[index].element = document.createElement('li')
     userNotes[index].element.classList.add("item-note")
     userNotes[index].element.id = keyNote
-
+    //Button
     let button = document.createElement("button")
     button.classList.add("button-note", "remove-note")
-    button.addEventListener("click", ()=>{}) //TODO: Implementar event
+    button.addEventListener("click", deleteNote) //TODO: Implementar event
     button.innerText = "-"
     userNotes[index].element.appendChild(button)
-
+    //Paragraph
     let paragraph = document.createElement("p")
     paragraph.innerText = userNote
     userNotes[index].element.appendChild(paragraph)
@@ -172,6 +175,34 @@ function newNote(){
         addNote(nameKey, userNewNote.value)
         userNewNote.value = ""
     }
+}
+
+function deleteElementNote(keyId){
+    document.querySelector(`#${keyId}`).remove()
+}
+
+function deleteNote(event){
+    const liElement = event.target.parentElement
+    const index = keyToNumber(liElement.id)
+
+    for(let i = index; i <= userNotes.length - 1; ++i){
+        if(userNotes.length - 1 > i){
+            userNotes[i].value = userNotes[i + 1 ].value 
+            
+            localStorage.setItem(userNotes[i].key, userNotes[i + 1].value)
+        } else {
+            localStorage.removeItem(userNotes[userNotes.length - 1].key)
+            userNotes.pop()
+        }
+    }
+    ordenedNotes = Object.keys(localStorage);
+    bubbleSort(ordenedNotes)
+
+    for(let i = 0; i < userNotes.length; i++){ 
+        let x = userNotes[i].key
+        deleteElementNote(x)
+    }
+    rememberNotes()
 }
 
 function initNotes(){
