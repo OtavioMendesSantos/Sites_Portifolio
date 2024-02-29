@@ -22,7 +22,7 @@ body{
     font-family: var(--importedFont);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 100vh;
+    min-height: 100vh;
     justify-items: center;
     align-items: center;
     user-select: none;
@@ -76,37 +76,6 @@ body{
 .menu-item img{
     width: 46px;
     height: 46px;
-}
-
-@media only screen and (max-width: 500px) {
-    .settings{
-        height: fit-content; 
-        width: fit-content;
-        position: absolute;
-        transition: 0.5s;
-        transform: translate(-100%) scale(0);
-    }
-
-    .settings:hover{
-       width: fit-content;
-    }
-
-    .active{
-        top: 10px;
-        left: 50%;
-        transform: translate(-50%);
-    }
-
-    #show-settings{
-        content: url('../svg/list.svg');
-        width: 46px;
-        height: 46px;
-        display: block;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    }
-  
 }
 
 /* Estilização de Inputs */
@@ -238,11 +207,10 @@ h1{
 
 .set-timer{
     display: block;
-    flex: 1 0 200px;
-    max-width: 300px;
+    flex: 1 0 0;
     
     color: #ffffff;
-    background-color: var(--color02);
+    background-color: var(--color01);
     font-size: 2em;
 
     border: 1px solid #ffffff;
@@ -332,4 +300,75 @@ footer a{
     color: #000;
     text-decoration: none;
     font-size: 1.5em;
+}
+
+/* Medias Queries */
+@media only screen and (max-width: 500px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .settings{
+        height: fit-content; 
+        width: 90%;
+        position: absolute;
+        transition: 0.5s;
+        transform: translate(-100%) scale(0);
+    }
+
+    .settings:hover{
+        width: 90%;
+    }
+    
+    .label-text{
+        width: fit-content;
+    }
+
+    .active{
+        top: 10px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    #show-settings{
+        content: url('../svg/list.svg');
+        width: 46px;
+        height: 46px;
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    
+    /* TODO: Reformular menu dropdown e seus filhos */
+
+    h1{
+        margin-top: 50px;
+    }
+
+    .full-apple{
+        top: 100px;
+        grid-column: 1/-1;
+        margin: auto;
+        scale: 0.7;
+    }
+
+    .timer-container{
+        min-width: 260px;
+        height: 150px;
+    }
+    
+    .timer-container p{
+        font-size: 4rem;
+    }
+
+    .set-timer{
+        font-size: 1.5rem;   
+    }
+
+    .container-notes{
+        width: 100%;
+    }
 }
