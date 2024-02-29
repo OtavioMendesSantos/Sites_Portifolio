@@ -176,9 +176,7 @@ function addNote(keyNote,userNote){
 } 
 
 function newNote(){
-    if(userNewNote.value == ""){
-        userNewNote.placeholder = "Por favor, informe uma atividade válida."
-    } else {
+    if(!userNewNote.value == ""){
         let nameKey = nameToString()
         localStorage.setItem(nameKey, userNewNote.value)
         addNote(nameKey, userNewNote.value)
@@ -208,5 +206,12 @@ function deleteNote(event){
 function initNotes(){
     rememberNotes()
     buttonNewNote.addEventListener('click', newNote) 
+    window.addEventListener('keydown', (event)=>{
+        if(event.key === "Enter"){
+            if (document.activeElement === userNewNote) {
+                newNote()
+            }
+        }
+    }) 
 }
 initNotes()
