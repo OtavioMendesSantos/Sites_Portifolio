@@ -104,18 +104,6 @@ function Note(key, value) {
     this.value = value;
 } 
 
-function rememberNotes(){
-    if(localStorage.length > 0){
-        //userNotes = []
-        let lastKey = keyToNumber(ordenedNotes[ordenedNotes.length - 1])
-        ordenedNotes.forEach((item)=>{
-            addNote(item, localStorage.getItem(item))
-        });  
-        lastItem = lastKey.valueOf()
-        lastItem++
-    }
-};
-
 function nameToString(){
     let nameKey = ("note" + lastItem).toString()
     lastItem++
@@ -141,13 +129,34 @@ function bubbleSort(itensArray){
     }
 }
 
+function rememberNotes(){
+    let itemNotes = document.querySelectorAll(".item-note")
+    if(localStorage.length > 0){
+        let lastKey = keyToNumber(ordenedNotes[ordenedNotes.length - 1])
+
+        if(itemNotes.length > 0){
+            itemNotes.forEach((_, index)=>{
+                document.getElementById(itemNotes[index].id).remove()
+            })
+        }
+
+        ordenedNotes.forEach((item)=>{
+            addNote(item, localStorage.getItem(item))
+        });  
+        
+        lastItem = lastKey.valueOf()
+        lastItem++
+    }
+    if(itemNotes.length == 1){
+        document.getElementById(itemNotes[0].id).remove()
+    }
+}
+
 function addNote(keyNote,userNote){
     let index = keyToNumber(keyNote)
-    
     if(!userNotes[index]){
         userNotes.push(new Note(keyNote, userNote))
     }
-    
     //Item Note
     userNotes[index].element = document.createElement('li')
     userNotes[index].element.classList.add("item-note")
@@ -162,7 +171,7 @@ function addNote(keyNote,userNote){
     let paragraph = document.createElement("p")
     paragraph.innerText = userNote
     userNotes[index].element.appendChild(paragraph)
-
+    //Add Item
     listNotes.insertBefore(userNotes[index].element, containerNewNote)
 } 
 
@@ -177,18 +186,14 @@ function newNote(){
     }
 }
 
-/* function deleteAllElementNote(keyId){
-    document.getElementById(keyId).remove()
-}
- */
 function deleteNote(event){
+    //Callback for Delete Button
     const liElement = event.target.parentElement
     const index = keyToNumber(liElement.id)
-
+    //Moves only the note text
     for(let i = index; i <= userNotes.length - 1; ++i){
         if(userNotes.length - 1 > i){
             userNotes[i].value = userNotes[i + 1 ].value 
-            
             localStorage.setItem(userNotes[i].key, userNotes[i + 1].value)
         } else {
             localStorage.removeItem(userNotes[userNotes.length - 1].key)
@@ -197,11 +202,6 @@ function deleteNote(event){
     }
     ordenedNotes = Object.keys(localStorage);
     bubbleSort(ordenedNotes)
-
-    /* for(let i = 0; i < userNotes.length; i++){ 
-        let x = userNotes[i].key
-        deleteAllElementNote(x)
-    } */
     rememberNotes()
 }
 
