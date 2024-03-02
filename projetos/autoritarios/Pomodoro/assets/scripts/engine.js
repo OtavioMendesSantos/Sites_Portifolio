@@ -106,7 +106,6 @@ function Note(key, value) {
 
 function nameToString(){
     let nameKey = ("note" + lastItem).toString()
-    lastItem++
     return nameKey
 }
 
@@ -149,6 +148,7 @@ function rememberNotes(){
     }
     if(itemNotes.length == 1){
         document.getElementById(itemNotes[0].id).remove()
+        lastItem--
     }
 }
 
@@ -176,8 +176,11 @@ function addNote(keyNote,userNote){
 } 
 
 function newNote(){
-    if(!userNewNote.value == ""){
+    const noteValue = !!userNewNote.value.trim()
+
+    if(noteValue){
         let nameKey = nameToString()
+        lastItem++
         localStorage.setItem(nameKey, userNewNote.value)
         addNote(nameKey, userNewNote.value)
         userNewNote.value = ""
@@ -195,7 +198,7 @@ function deleteNote(event){
             localStorage.setItem(userNotes[i].key, userNotes[i + 1].value)
         } else {
             localStorage.removeItem(userNotes[userNotes.length - 1].key)
-            userNotes.pop()
+            userNotes.splice(0)
         }
     }
     ordenedNotes = Object.keys(localStorage);
