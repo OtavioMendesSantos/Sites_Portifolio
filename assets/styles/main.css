@@ -103,12 +103,13 @@ li.linkMenu{
     font-family: var(--fontTitle);
     color: white;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 li.linkMenu:hover{
     background-color: #323232;
-    box-shadow: 2px 2px 2px var(--colorHeader);
-}/*Seria legal fazer uma animação que quando passasse o mouse, o espaço das letras aumentariam um pouco */
+    letter-spacing: 2px;
+}
 
 li.linkMenu a{
     display: inline-block;
