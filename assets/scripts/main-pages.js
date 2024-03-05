@@ -25,7 +25,7 @@ function createHeader(){
     
     const li = [];
     const link = [];
-    const menuItens = ['Formação', 'Projetos', 'Hobbies'];
+    const menuItens = ['FORMAÇÃO', 'PROJETOS', 'HOBBIES'];
     const menuLinks = ['formacao.html', 'projetos.html', 'hobbies.html'];
     menuItens.forEach((item, index)=>{
         li[index] = document.createElement('li')
