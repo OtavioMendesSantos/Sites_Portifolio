@@ -206,6 +206,23 @@ function deleteNote(event){
     rememberNotes()
 }
 
+function deleteAllNotes(){
+    if (userNotes != 0){
+        let itemNotes = document.querySelectorAll(".item-note")
+        listNotes.querySelectorAll(".item-note").forEach((item)=>{
+            localStorage.removeItem(item.id)
+            let i = keyToNumber(item.id)
+            document.getElementById(itemNotes[i].id).remove()
+        })
+        
+        userNotes.splice(0)
+        lastItem = 0
+
+        ordenedNotes = Object.keys(localStorage);
+        bubbleSort(ordenedNotes)
+    }
+} 
+
 function initNotes(){
     rememberNotes()
     buttonNewNote.addEventListener('click', newNote) 
