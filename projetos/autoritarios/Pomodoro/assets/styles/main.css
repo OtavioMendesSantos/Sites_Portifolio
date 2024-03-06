@@ -264,6 +264,35 @@ h1{
     border-bottom:.1rem solid #eeeeee;
 }
 
+#remove-all-notes{
+    display: flex;
+    align-items: center;
+    /* font-family: var(--importedFont); */
+    font-size: var(--fontSize);
+    font-weight: bold;
+    margin-top: 10px;
+    color: #000000;
+    border-radius: 5px;
+    padding: 5px ;
+    border: none;
+    border-bottom: 10px solid var(--color03);
+    background-color: var(--color02);
+    cursor: pointer;
+    transition: 0.2s
+}
+
+#remove-all-notes::before{
+    content: url(../svg/trash.svg);
+}
+
+#remove-all-notes:hover{
+    border-bottom: 5px solid var(--color03);
+}
+
+#remove-all-notes:active{
+    border-bottom:none;
+}
+
 .button-note{
     width: 20px;
     height: 20px;
