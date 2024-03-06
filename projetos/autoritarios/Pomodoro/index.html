@@ -104,7 +104,7 @@
     </div>
 
     <section class="container-notes">
-        <h2>Lista de Atividades (Beta)</h2>
+        <h2>Lista de Atividades</h2>
         <ul class="user-notes">
             
             <li id="add-item-note">
@@ -112,7 +112,12 @@
                 <input type="text" placeholder="Insira sua atividade..." autocomplete="off" class="input-note" id="inputNewNote">
             </li>
         </ul>
-        <button id="remove-all-notes" onclick="deleteAllNotes()">Remover todas as notas</button>
+        <div id="container-remove-all">
+
+            <button class="remove-all-notes" onclick="deleteAllNotes()"><img src="assets/svg/trash.svg" alt="Lixeira Excluir Notas"></button>
+
+            <!-- <button class="remove-all-notes" onclick="deleteAllNotes()">Remover Notas</button> -->
+        </div>
     </section>
 
     <footer>

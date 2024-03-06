@@ -229,6 +229,7 @@ h1{
 
 /* Estilização das notas de usuários*/
 .container-notes{
+    position: relative;
     grid-column: 1/-1;
     background-color: var(--color01);
     padding: var(--smallPadding);
@@ -264,21 +265,27 @@ h1{
     border-bottom:.1rem solid #eeeeee;
 }
 
-#remove-all-notes{
+#container-remove-all{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.remove-all-notes{
     display: flex;
     align-items: center;
     /* font-family: var(--importedFont); */
     font-size: var(--fontSize);
     font-weight: bold;
-    margin-top: 10px;
+    margin: 0px;
+    word-break: keep-all;
     color: #000000;
     border-radius: 5px;
     padding: 5px ;
     border: none;
-    border-bottom: 10px solid var(--color03);
     background-color: var(--color02);
     cursor: pointer;
-    transition: 0.2s
+    transition: 0.3s;
 }
 
 #remove-all-notes::before{
@@ -286,11 +293,7 @@ h1{
 }
 
 #remove-all-notes:hover{
-    border-bottom: 5px solid var(--color03);
-}
-
-#remove-all-notes:active{
-    border-bottom:none;
+    background-color: var(--color03);
 }
 
 .button-note{
