@@ -114,6 +114,12 @@ function keyToNumber(key){
     return Number(key.slice(4))
 }
 
+function scrollToInput(){
+    userNewNote.scrollIntoView({
+        behavior: "smooth",
+    })
+}
+
 function bubbleSort(itensArray){
     //Uses an Array as a parameter 
     //Caution, this function modify the Array
@@ -153,6 +159,7 @@ function rememberNotes(){
 }
 
 function addNote(keyNote,userNote){
+    scrollToInput()
     let index = keyToNumber(keyNote)
     if(!userNotes[index]){
         userNotes.push(new Note(keyNote, userNote))
