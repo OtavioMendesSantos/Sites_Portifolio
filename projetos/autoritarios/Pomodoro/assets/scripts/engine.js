@@ -31,6 +31,25 @@ function increaseNumber(event){
     event.target.previousElementSibling.stepUp()
 }
 
+/* Song Settings */
+const checkboxSound = document.querySelector('#checkbox-sound')
+checkboxSound.addEventListener('click', controlAudio)
+const audio = new Audio()
+
+function controlAudio(){
+    if(checkboxSound.checked){
+        audio.volume = 1.0
+    }else{
+        audio.volume = 0.0
+    }
+}
+
+/* Audio */
+function playSound(soundName){
+    audio.src = `assets/audios/${soundName}.mp3`
+    audio.play()
+}
+
 /* Settings Mobile Menu */
 const mobileMenu = document.querySelector('#show-settings')
 const menuSettings = document.querySelector('.settings')
@@ -50,13 +69,17 @@ document.addEventListener('click', function(event){
 })
 
 /* Timer */
+/* 
+Todo: Adicionar Botão de Pause 
+*/
 const timer = document.querySelector('#timer')
 let decreaseTime, minutes, seconds;
-
+/* let counting = false; Será útil quando ter um botão de pause */
 function initTimer(x){
     let n;
     const pomodoroTimer = document.querySelector('#pomodoro-timer').value
     const restTimer = document.querySelector('#rest-timer').value
+    playSound('light_switch_on')
 
     switch(x){
         case 1:
@@ -77,6 +100,7 @@ function initTimer(x){
     decreaseTime = setInterval(()=>{
         if(timerStart <= 0){
             clearInterval(decreaseTime)
+            playSound('bicycle_bell')
         }else{
             timerStart -= 1000
             minutes = Math.floor(timerStart/1000/60)
@@ -186,6 +210,7 @@ function newNote(){
     const noteValue = !!userNewNote.value.trim()
 
     if(noteValue){
+        playSound('pencil')
         let nameKey = nameToString()
         lastItem++
         localStorage.setItem(nameKey, userNewNote.value)
@@ -195,6 +220,7 @@ function newNote(){
 }
 
 function deleteNote(event){
+    playSound('pencil_check_mark_1')
     //Callback for Delete Button
     const liElement = event.target.parentElement
     const index = keyToNumber(liElement.id)
@@ -215,6 +241,7 @@ function deleteNote(event){
 
 function deleteAllNotes(){
     if (userNotes != 0){
+        playSound('pencil_eraser')
         let itemNotes = document.querySelectorAll(".item-note")
         listNotes.querySelectorAll(".item-note").forEach((item)=>{
             localStorage.removeItem(item.id)
