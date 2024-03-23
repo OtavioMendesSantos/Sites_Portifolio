@@ -1,3 +1,4 @@
+/* ---- Importando Fontes ---- */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
@@ -18,19 +19,23 @@ ul{
 }
 
 /* ---- Começando a Codificar ---- */
-
 html.textoMaior{
     font-size: 150%;
 }
 
 body{
-    --fonteImportada: 'IBM Plex Mono', monospace;
-    --fonteTitulo: 'Playfair Display SC', serif;
     background-color: #faf6ed;
     color: #222222;
     -webkit-font-smoothing: antialiased; /* PENDENTE: Ver isso */
+
+    --fonteImportada: 'IBM Plex Mono', monospace;
+    --fonteTitulo: 'Playfair Display SC', serif;
+}
+
+.grid-container{
     display: grid;
     grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+
 }
 
 .menu{
@@ -110,7 +115,7 @@ body{
 }
 
 .animais-lista li{
-    cursor: pointer; /* PENDENTE: Ver isso */
+    cursor: pointer;
 }
 
 .animais-lista::-webkit-scrollbar{ /* PENDENTE: Ver isso */
@@ -198,8 +203,8 @@ body{
     font-weight: bold;
 }
 
-@media (max-width: 700px){ /* PENDENTE: Ver isso */
-    body{
+@media (max-width: 700px){
+    .grid-container{
         grid-template-columns: 1fr;
     }
     .menu, .grid-section, .copy{
@@ -207,7 +212,7 @@ body{
     }
     .grid-section{
         grid-template-columns: 100px 1fr;
-        grid-gap: 10px; /* PENDENTE: Ver isso */
+        grid-gap: 10px;
     }
     .animais-lista{
         grid-column: 1;
@@ -224,16 +229,23 @@ body{
     }
 }
 
-.js .js-tabcontent section{
+.js [data-tab="content"] section{
     display: none;
 }
 
-.js .js-tabcontent section.ativo{ /* PENDENTE: Ver isso */
+.js [data-tab="content"] section.ativo{ 
     display: block !important; 
-    animation: show .5s forwards; 
 }
 
-@keyframes show { /* PENDENTE: Ver isso */
+.js [data-tab="content"] section.ativo.show-right{ 
+    animation: show-right .5s forwards; 
+}
+
+.js [data-tab="content"] section.ativo.show-down{ 
+    animation: show-down .5s forwards; 
+}
+
+@keyframes show-right { 
     from {
         opacity: 0;
         transform: translate3d(-30px, 0, 0);
@@ -244,24 +256,35 @@ body{
     }
 }
 
-.js .js-accordion dd{
+@keyframes show-down { 
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.js [data-anime="accordion"] dd{
     display: none;
 }
 
-.js .js-accordion dt{
+.js [data-anime="accordion"] dt{
     cursor: pointer;
 }
 
-.js .js-accordion dt::after{
+.js [data-anime="accordion"] dt::after{
     content: '▷';
     margin-left: 10px;
 }
 
-.js .js-accordion dt.ativo::after{
+.js [data-anime="accordion"] dt.ativo::after{
     content: '▽';
 }
 
-.js .js-accordion dd.ativo {
+.js [data-anime="accordion"] dd.ativo {
     display: block;
     animation: slideDown .5s forwards;
 }
@@ -277,15 +300,30 @@ body{
     }
 }
 
-.js .js-scroll{
+.js [data-anime="scroll"]{
     opacity: 0;
     transform: translate3d(-30px, 0, 0);
     transition: .3s;
 
 }
 
-.js .js-scroll.ativo{
+.js [data-anime="scroll"].ativo{
     opacity: 1;
     transform: translate3d(0, 0, 0);
     transition: .3s;
+}
+
+[data-semana]::after{
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ee5544;
+    margin-left: 4px;
+    border: 2px solid #222222;
+}
+
+[data-semana].aberto::after{
+    background-color: #33FF44;
 }
