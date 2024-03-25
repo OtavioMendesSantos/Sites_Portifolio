@@ -1,0 +1,307 @@
+/* ----- Importando Fontes Externas ----- */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* ----- Estilização Geral ----- */
+:root{
+    box-sizing: border-box;
+
+    --smallRadius: 4px;
+
+    --color00: #095026;
+    --color01: #427D2A;
+    --color02: #D78500;
+    --color03: #6C0500;
+    --color04: #FBFBF9;
+    --colorHeader: #222222;
+    --colorBackground: #303030;
+
+    --fontText: "Roboto", sans-serif ;
+    --fontFunctional: "IBM Plex Mono", sans-serif;
+}
+
+h1, h2, h3, p{
+    font-family: var(--fontText);
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+input, select, textarea{
+    box-sizing: border-box;
+}
+/* ----- Estilização Header ----- */
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: var(--colorHeader);
+    color: var(--color01);
+}
+
+.header h1{
+    text-align: left;
+}
+
+/* ----- Estilização Main ----- */
+main{
+    padding: 10px;
+    min-height: 100vh;
+}
+
+/* ----- Estilização Section Calculo ----- */
+.calc-container{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #000;
+    padding: 20px;
+    border-radius: var(--smallRadius);
+    max-width: 600px;
+    min-width: 280px; 
+    margin: auto;
+}
+
+.calc-title{
+    color: var(--color02);
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.calc-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-item{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-item label{
+    font-family: var(--fontText);
+    font-weight: bold;
+    font-size: 1.75rem;
+}
+
+.form-item input{
+    height: 3rem;
+    font-family: var(--fontText);
+    font-weight: 400;
+    font-size: 1.75rem;
+    color: #222222;
+    border-radius: var(--smallRadius);
+    border: 3px solid #000;
+    padding: 2px 1px;
+}
+
+.form-item input:focus{
+    outline: none;
+    background-color: rgb(225, 225, 225);
+}
+
+.juros-inputs{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.juros-inputs input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100px;
+    flex: 1 1 100px;
+}
+
+.juros-inputs select{
+    padding: 2px 1px;
+    height: 3rem;
+    font-family: var(--fontText);
+    font-size: 1.75rem;
+    color: #fff;
+    font-weight: bold;
+    border: 3px solid #000;
+    border-left: none;
+    border-top-right-radius: var(--smallRadius);
+    border-bottom-right-radius: var(--smallRadius);
+    background-color: #303030;
+    outline: none;
+}
+
+.juros-inputs select:hover{
+    background-color: #222;
+}
+
+.juros-inputs select > option{
+    background-color: #303030;
+}
+
+.juros-inputs select > option{
+    background-color: #4f4f4f;
+    user-select:none ;
+}
+.calc-periodos p{
+    display: flex;
+    align-items: center;
+}
+
+.calc-periodos img{
+    width: 24px;
+    height: 24px;
+}
+
+.periodos-inputs{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.periodo-input{
+    display: flex;
+}
+
+.periodos-inputs input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    flex: 1 1 100px;}
+
+.periodos-inputs p{
+    padding: 2px 6px;
+
+    font-family: var(--fontText);
+    font-size: 1.75rem;
+    color: #fff;
+    font-weight: bold;
+    border: 3px solid #000;
+    border-left: none;
+    border-top-right-radius: var(--smallRadius);
+    border-bottom-right-radius: var(--smallRadius);
+    background-color: #303030;
+}
+
+.periodos-inputs button{
+    font-family: var(--fontFunctional);
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #303030;
+    border: 3px solid #000;
+    border-radius: var(--smallRadius);
+    cursor: pointer;
+}
+
+.periodos-inputs button:hover{
+    background-color: #222222;
+}
+
+
+
+.calc-button{
+    font-family: var(--fontFunctional);
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color02);
+    background-color: var(--color00);
+    padding: 12px;
+    border: 3px solid #000;
+    border-radius: var(--smallRadius);
+}
+
+/* ----- Estilização Footer ----- */
+.footer{
+    background-color: var(--colorHeader);
+    padding: 20px;
+}
+
+.footer ul{
+    border-bottom: 3px solid #000;
+    padding-bottom: 20px;
+}
+
+.footer ul li{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-family: var(--fontText);
+    margin-bottom: 5px;
+}
+
+.footer ul li::before{
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 10px;
+    background-color: #000;
+    margin-right: 10px; 
+}
+
+.container-social{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-social h2{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.item-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer > p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer p a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: .5s;
+    position: relative;
+}
+
+
+.footer p a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 0%;
+    background-color: #fff;
+    transition: .3s ease-in-out;
+}
+
+.footer p a:hover::after{
+    width: 100%;
+
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="shortcut icon" href="assets/svgs/calculator.svg" type="image/x-icon">
+    <link rel="stylesheet" href="assets/styles/normalize.css">
+    <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+<body>
+    <header class="header">
+        <img src="assets/svgs/cash-icon.svg" alt="Cash Icon">
+        <h1>Calculadora Financeira</h1>
+    </header>
+    
+    <main>
+        <section class="calc-container">
+            <h2 class="calc-title">Juros Compostos</h2>
+            <form action="" class="calc-form">
+                <div class="form-item">
+                    <label for="capital-inicial">Capital Inicial:</label>
+                    <input type="number" min="0" placeholder="R$00.00" name="capital-inicial" id="capital-inicial">
+                </div>
+                
+                <div class="form-item calc-juros">
+                    <label for="taxa-juros">Taxa de Juros:</label>
+                    <div class="juros-inputs">
+                        <input type="number" min="0" placeholder="0.00" name="taxa-juros" id="taxa-juros">
+                        <select name="taxa-juros" id="taxa-juros">
+                            <option value="mes">% Mensal</option>
+                            <option value="ano">% Anual</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-item calc-periodos">
+                    <p>
+                        <label for="periodo">Número de Períodos:</label>
+                        <img src="assets/svgs/help-outline.svg" alt="">
+                    </p>
+                    <div class="periodos-inputs">
+                        <div class="periodo-input">
+                            <input type="number" min="0" placeholder="0" name="periodo" id="periodo">
+                            <p class="tipo-taxa-juros">Meses</p>
+                        </div>
+                        <button>+</button>
+                        <button>-</button>
+                    </div>
+                </div>
+
+                <button class="calc-button">CALCULAR</button>
+            </form>
+
+            <!-- <table class="calculation-result" id="capture">
+                <thead>
+                    <tr>
+                        <td>Descrição</td>
+                        <td>Valor</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Capital Inicial</td>
+                        <td>R$00,00</td>
+                    </tr>
+                    <tr>
+                        <td>Juros</td>
+                        <td>R$00,00</td>
+                    </tr>
+                    <tr>
+                        <td>Montante</td>
+                        <td>R$00,00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button>Copiar</button> -->
+ 
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <ul>
+            <li>O que são juros?</li>
+            <li>O que são juros simples?</li>
+            <li>O que são juros compostos?</li>
+            <li>O que é TVM (<em>Time Value Of Money</em>)?</li>
+            <li>O que é valor presente?</li>
+            <li>O que é valor futuro?</li>
+        </ul>
+        <section class="container-social">
+            <h2>Redes Sociais</h2>
+            <div class="item-social">
+                <img src="assets/svgs/gmail_black_logo.svg" alt="Gmail Icon">
+                <p>Gmail</p>
+            </div>
+            <div class="item-social">
+                <img src="assets/svgs/linkedin_black_logo.svg" alt="Linkedin Icon">
+                <p>Linkedin</p>
+            </div>
+            <div class="item-social">
+                <img src="assets/svgs/github-logo.svg" alt="GitHub Icon">
+                <p>GitHub</p>
+            </div>
+        </section>
+        <p><a href="https://otaviomendessantos.github.io/Sites_Portifolio/index.html" target="_blank">Desenvolvido por @OtavioMendesSantos <img src="assets/svgs/link_icon.svg" height="24px" width="24px"></a></p>
+    </footer>
+
+    <script src="scripts/html2canvas.js"></script>
+    <script src="scripts/main.js"></script>
+<!--     <script>
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.body.appendChild(canvas)
+        });
+    </script> -->
+</body>
+</html>
