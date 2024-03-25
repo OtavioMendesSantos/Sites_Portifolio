@@ -157,6 +157,7 @@ main{
 .calc-periodos img{
     width: 24px;
     height: 24px;
+    margin-left: 10px;
 }
 
 .periodos-inputs{
@@ -164,7 +165,6 @@ main{
     flex-wrap: nowrap;
     flex-direction: row;
     gap: 10px;
-
 }
 
 .periodo-input{
@@ -179,7 +179,6 @@ main{
 
 .periodos-inputs p{
     padding: 2px 6px;
-
     font-family: var(--fontText);
     font-size: 1.75rem;
     color: #fff;
@@ -208,8 +207,6 @@ main{
     background-color: #222222;
 }
 
-
-
 .calc-button{
     font-family: var(--fontFunctional);
     font-size: 24px;
@@ -219,6 +216,11 @@ main{
     padding: 12px;
     border: 3px solid #000;
     border-radius: var(--smallRadius);
+    cursor: pointer;
+}
+
+.calc-button:hover{
+    background-color: #073f1f;
 }
 
 /* ----- Estilização Footer ----- */
@@ -303,5 +305,4 @@ main{
 
 .footer p a:hover::after{
     width: 100%;
-
 }
