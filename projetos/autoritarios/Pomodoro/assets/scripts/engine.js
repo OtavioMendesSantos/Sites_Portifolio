@@ -34,6 +34,9 @@ function increaseNumber(event){
 /* Song Settings */
 const checkboxSound = document.querySelector('#checkbox-sound')
 checkboxSound.addEventListener('click', controlAudio)
+const soundVolume = document.querySelector('#audio-volume')
+soundVolume.addEventListener('change', controlVolume)
+
 const audio = new Audio()
 
 function controlAudio(){
@@ -42,6 +45,10 @@ function controlAudio(){
     }else{
         audio.volume = 0.0
     }
+}
+
+function controlVolume(){
+    audio.volume = soundVolume.value
 }
 
 /* Audio */
