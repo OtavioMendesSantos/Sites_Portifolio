@@ -241,6 +241,7 @@ h1{
     margin: 40px 40px;
     border-radius: 10px;
     z-index: 2;
+    user-select: text;
 }
 
 .container-notes h2{
@@ -301,6 +302,7 @@ h1{
 }
 
 .button-note{
+    flex: 1 0 auto;
     width: 20px;
     height: 20px;
     background-color: #ffffff80;
