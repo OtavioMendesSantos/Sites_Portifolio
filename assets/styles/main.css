@@ -203,4 +203,11 @@ footer p a,footer p , .linkMenu a{
     li.linkMenu a{
         width: 110px;
     }
+
+    footer{
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 0.9rem;
+        z-index: 4;
+    }
 }

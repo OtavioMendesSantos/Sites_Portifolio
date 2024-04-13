@@ -2,49 +2,27 @@ a{
     font-family: 'Arial', Helvetica, sans-serif;
 }
 
-/* Grid Geral */
+/* Estililzação Geral */
 article{
     margin-bottom: 10px;
-
 }
 
 .projects{
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 20px;
-    gap: 20px;
-    justify-items: center;
+    gap: 30px;
+    justify-content: center;
     align-items: center;
 }
 
 .project-type{
-    grid-column: 1 / -1;
-    text-align: left;
-    width: 80%;
+    flex: 1 0 100%;
+    text-align: center;
+ 
+    margin-left: 100px ;
+    margin-right: 100px ;
     position: relative;
-}
-
-.project-type::before{
-    content: '';
-    display: block;
-    width: 300px;
-    height: 10px;
-    background-color: #222222;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-110%, -50%);
-}
-
-.project-type::after{
-    content: '';
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: #222222;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-200%, -50%) rotate(45deg);
 }
 
 /* Project individual */
@@ -84,11 +62,15 @@ article{
     border-radius: 5px;
 }
 
+.container-imgs{
+    display: flex;
+    gap: 10px;
+}
+
 .project-stacks{
     list-style: none;
     padding: 0;
     margin: 0;
-    height: 250px;
     overflow-y: auto;
     overflow-x: hidden; /* configurar depois com scrollbar editada */
 }
@@ -141,20 +123,26 @@ iframe{
 
 
 /* Medias Queries */
-@media only screen and (min-width: 750px) {
+@media only screen and (max-width: 750px) {
     .projects{
         grid-template-columns: 1fr 1fr;
     }
-}
 
-@media only screen and (min-width: 1000px) {
-    .projects{
-        grid-template-columns: 1fr 1fr 1fr;
+    .project-type{
+       /*  margin-left: 50px ;
+        margin-right: 0px; */
     }
-}
 
-@media only screen and (min-width: 1300px) {
-    .projects{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    .container-imgs{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .project-stacks{
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
     }
 }
