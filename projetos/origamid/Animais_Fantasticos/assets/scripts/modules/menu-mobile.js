@@ -1,15 +1,16 @@
 import outsideClick from "./oustideclick.js";
 
 export default class MenuMobile{
-    constructor(menuButton, menuList, events = ['click']){
+    constructor(menuButton, menuList, events = ['click', 'touchstart']){
         this.menuButton = document.querySelector(menuButton)
         this.menuList = document.querySelector(menuList)
-        this.eventos = events //['touchstart'] -> Não funciona correto
+        this.eventos = events
         this.activeClass = 'active'
         this.openMenu = this.openMenu.bind(this)
     }
     
     openMenu(event){
+        event.preventDefault()
         this.menuList.classList.add(this.activeClass)
         this.menuButton.classList.add(this.activeClass)
         outsideClick(this.menuList, this.eventos, ()=>{

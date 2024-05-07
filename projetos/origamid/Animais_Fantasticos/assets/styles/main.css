@@ -276,12 +276,19 @@ body{
 }
 
 .js [data-anime="accordion"] dt::after{
-    content: '▷';
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background: url(../img/arrow-red.svg) no-repeat center center;
     margin-left: 10px;
+    transform: rotate(90deg);
+    transition: transform .3s;
 }
 
 .js [data-anime="accordion"] dt.ativo::after{
-    content: '▽';
+    content: '';
+    transform: rotate(-90deg);
 }
 
 .js [data-anime="accordion"] dd.ativo {
@@ -333,4 +340,11 @@ body{
 
 [data-semana].aberto::after{
     background-color: #33FF44;
+}
+
+.arrow-black{
+    background: url('../img/arrow-black.svg') no-repeat center center;
+    display: inline-block;
+    width: 8px;
+    height: 10px;
 }

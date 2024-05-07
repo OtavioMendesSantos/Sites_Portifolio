@@ -24,4 +24,9 @@
         grid-template-columns: 1fr;
         gap: 0px;
     }
+
+    .numeros-grid h3{
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
 }
