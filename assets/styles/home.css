@@ -6,7 +6,7 @@ main{
 /* Formatando Container */
 .container{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -134,7 +134,6 @@ main{
 /* Formatando cantainer-2 */
 .container-2{
     flex: 1 1 300px;
-
     display: grid;
     align-content: center;
     gap: 20px;
@@ -144,14 +143,66 @@ main{
     text-indent: 20px;
 }
 
-/* @media only screen and (max-width: 650px){
+/* Formatando Experiência */
+.experience-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}	
 
-    .container-right{
-        order: 0;
-    }
-    
-    .container-1{
-        order: 1;
-    }
-    
-} */
+.experience-container strong{
+    color: #222222;
+}
+
+.experience-item{
+    border-left: 5px solid var(--colorHeader);
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.25rem;
+}
+
+.experience-title{
+    font-size: 1.7rem;
+}
+
+.experience-date{
+    font-size: .875rem;
+    color: #444444;
+}
+
+.experience-details > p {
+    color: #222222;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.experience-details ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.experience-details li{
+    position: relative;
+}
+
+.experience-details li::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: -10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transform: translateY(250%);
+    background-color: #222;
+}
